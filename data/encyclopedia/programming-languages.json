@@ -1,0 +1,35 @@
+[
+  {
+    "id": "javascript",
+    "title": "JavaScript",
+    "description": "A versatile programming language for web development, server-side applications, and more.",
+    "content": "JavaScript is a high-level, interpreted programming language that has become one of the most popular languages in the world. Originally designed for web browsers, JavaScript has expanded to server-side development, mobile applications, and desktop software.\n\nKey features include dynamic typing, first-class functions, prototype-based object orientation, and event-driven programming. Modern JavaScript (ES6+) includes features like arrow functions, classes, modules, and async/await.\n\nJavaScript is essential for front-end development and powers frameworks like React, Vue, and Angular. On the server side, Node.js enables JavaScript for backend development.",
+    "category": "Web Development",
+    "difficulty": "Beginner to Advanced",
+    "popularity": "Very High",
+    "firstAppeared": "1995",
+    "paradigms": ["Multi-paradigm", "Event-driven", "Functional", "Object-oriented"]
+  },
+  {
+    "id": "python",
+    "title": "Python",
+    "description": "A powerful, easy-to-learn programming language with extensive libraries and applications.",
+    "content": "Python is a high-level, interpreted programming language known for its simplicity and readability. It emphasizes code readability with its notable use of significant whitespace and clear syntax.\n\nPython supports multiple programming paradigms including procedural, object-oriented, and functional programming. It has a comprehensive standard library and a vast ecosystem of third-party packages.\n\nCommon applications include web development (Django, Flask), data science (NumPy, Pandas), machine learning (TensorFlow, PyTorch), automation, and scientific computing.",
+    "category": "General Purpose",
+    "difficulty": "Beginner",
+    "popularity": "Very High",
+    "firstAppeared": "1991",
+    "paradigms": ["Multi-paradigm", "Object-oriented", "Procedural", "Functional"]
+  },
+  {
+    "id": "typescript",
+    "title": "TypeScript",
+    "description": "A typed superset of JavaScript that compiles to plain JavaScript, adding static type definitions.",
+    "content": "TypeScript is a programming language developed by Microsoft that builds on JavaScript by adding static type definitions. It helps catch errors early through a type system and makes JavaScript development more efficient.\n\nTypeScript code is transpiled to JavaScript, making it compatible with any browser, host, or operating system. It supports modern JavaScript features and adds powerful type checking capabilities.\n\nWidely adopted in large-scale applications, TypeScript improves code quality, developer productivity, and maintainability. It's particularly popular in React, Angular, and Node.js development.",
+    "category": "Web Development",
+    "difficulty": "Intermediate",
+    "popularity": "High",
+    "firstAppeared": "2012",
+    "paradigms": ["Multi-paradigm", "Object-oriented", "Functional"]
+  }
+]

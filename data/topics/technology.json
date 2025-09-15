@@ -1,0 +1,24 @@
+[
+  {
+    "id": "ai-development-trends-2024",
+    "title": "AI Development Trends Shaping 2024",
+    "excerpt": "Explore the latest artificial intelligence trends and their impact on software development.",
+    "content": "Artificial Intelligence continues to revolutionize software development in 2024. This article examines the most significant AI trends affecting developers and businesses worldwide.\n\nWe'll cover advances in large language models, AI-powered development tools, machine learning operations (MLOps), and the integration of AI into everyday applications. Learn how these trends are changing the development landscape.\n\nThe article includes practical insights on adopting AI technologies, ethical considerations, and predictions for the future of AI in development.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "Dr. Amanda Foster",
+    "publishedAt": "2024-01-20",
+    "readTime": "13 min read",
+    "tags": ["Artificial Intelligence", "Machine Learning", "Development Tools", "Future Tech"]
+  },
+  {
+    "id": "edge-computing-explained",
+    "title": "Edge Computing: The Future of Distributed Systems",
+    "excerpt": "Understanding edge computing and its applications in modern distributed architectures.",
+    "content": "Edge computing is transforming how we think about data processing and application architecture. This comprehensive guide explains the concepts, benefits, and implementation strategies for edge computing.\n\nWe'll explore use cases across industries, compare edge computing with cloud computing, and discuss the technical challenges and solutions. Learn how edge computing enables faster response times and improved user experiences.\n\nThe article provides practical examples and guidance for implementing edge computing solutions in your applications.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "Robert Chen",
+    "publishedAt": "2024-01-17",
+    "readTime": "11 min read",
+    "tags": ["Edge Computing", "Distributed Systems", "Cloud Computing", "Architecture"]
+  }
+]

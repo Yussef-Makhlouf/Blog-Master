@@ -1,0 +1,24 @@
+[
+  {
+    "id": "nextjs-fullstack-tutorial",
+    "title": "Building a Full-Stack App with Next.js 14",
+    "excerpt": "Step-by-step tutorial for creating a complete web application using Next.js 14 and modern tools.",
+    "content": "This comprehensive tutorial walks you through building a full-stack web application using Next.js 14, including authentication, database integration, and deployment.\n\nWe'll cover project setup, database design, API routes, authentication implementation, and frontend development. Each step includes detailed explanations and code examples.\n\nBy the end of this tutorial, you'll have a complete understanding of modern full-stack development with Next.js and be able to build production-ready applications.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "Tom Wilson",
+    "publishedAt": "2024-01-22",
+    "readTime": "25 min read",
+    "tags": ["Next.js", "Full-Stack", "Tutorial", "Web Development"]
+  },
+  {
+    "id": "tailwind-components-guide",
+    "title": "Creating Reusable Components with Tailwind CSS",
+    "excerpt": "Learn how to build a component library using Tailwind CSS and modern React patterns.",
+    "content": "Building reusable components is essential for maintaining consistency and efficiency in your projects. This tutorial shows you how to create a comprehensive component library using Tailwind CSS.\n\nWe'll cover component architecture, styling patterns, TypeScript integration, and documentation strategies. Learn how to build components that are both flexible and maintainable.\n\nThe tutorial includes practical examples and a complete component library that you can use as a starting point for your own projects.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "Jessica Lee",
+    "publishedAt": "2024-01-19",
+    "readTime": "18 min read",
+    "tags": ["Tailwind CSS", "React", "Component Library", "Tutorial"]
+  }
+]

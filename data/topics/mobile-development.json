@@ -1,0 +1,24 @@
+[
+  {
+    "id": "react-native-performance",
+    "title": "Optimizing React Native Performance",
+    "excerpt": "Essential techniques for building high-performance React Native applications.",
+    "content": "Performance optimization is crucial for creating smooth and responsive React Native applications. This comprehensive guide covers the most effective techniques for improving your app's performance.\n\nWe'll explore memory management, rendering optimization, navigation performance, and bundle size reduction strategies. Learn how to identify performance bottlenecks and implement solutions that make a real difference.\n\nThe article includes practical examples, performance monitoring tools, and best practices used by top mobile development teams.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "David Park",
+    "publishedAt": "2024-01-12",
+    "readTime": "14 min read",
+    "tags": ["React Native", "Performance", "Mobile Development", "Optimization"]
+  },
+  {
+    "id": "flutter-vs-react-native",
+    "title": "Flutter vs React Native: A Comprehensive Comparison",
+    "excerpt": "An in-depth comparison of Flutter and React Native for cross-platform mobile development.",
+    "content": "Choosing between Flutter and React Native can be challenging. This detailed comparison examines both frameworks across multiple dimensions including performance, development experience, ecosystem, and long-term viability.\n\nWe'll analyze real-world case studies, performance benchmarks, and developer productivity metrics to help you make an informed decision for your next mobile project.\n\nThe article provides practical guidance on when to choose each framework and migration strategies if you need to switch.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "Lisa Wang",
+    "publishedAt": "2024-01-08",
+    "readTime": "16 min read",
+    "tags": ["Flutter", "React Native", "Cross-platform", "Mobile Development"]
+  }
+]

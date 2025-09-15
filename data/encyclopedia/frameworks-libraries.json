@@ -1,0 +1,35 @@
+[
+  {
+    "id": "react",
+    "title": "React",
+    "description": "A JavaScript library for building user interfaces, particularly web applications.",
+    "content": "React is a free and open-source front-end JavaScript library for building user interfaces based on components. Developed by Facebook, React has become one of the most popular libraries for web development.\n\nKey concepts include components, JSX, virtual DOM, state management, and hooks. React follows a declarative programming paradigm and uses a component-based architecture.\n\nReact's ecosystem includes tools like Create React App, Next.js, Gatsby, and state management libraries like Redux and Zustand. It's widely used for building single-page applications and progressive web apps.",
+    "category": "Frontend Framework",
+    "type": "Library",
+    "maintainer": "Meta (Facebook)",
+    "firstRelease": "2013",
+    "license": "MIT"
+  },
+  {
+    "id": "nextjs",
+    "title": "Next.js",
+    "description": "A React framework that enables functionality such as server-side rendering and static site generation.",
+    "content": "Next.js is a React framework that provides infrastructure and simple development experience for server-side rendered applications. It offers features like automatic code splitting, optimized performance, and built-in CSS support.\n\nKey features include server-side rendering (SSR), static site generation (SSG), API routes, automatic code splitting, and built-in optimization. The App Router in Next.js 13+ provides improved routing and layouts.\n\nNext.js is ideal for building production-ready React applications with excellent performance and SEO. It's used by companies like Netflix, Uber, and Starbucks for their web applications.",
+    "category": "Full-Stack Framework",
+    "type": "Framework",
+    "maintainer": "Vercel",
+    "firstRelease": "2016",
+    "license": "MIT"
+  },
+  {
+    "id": "tailwindcss",
+    "title": "Tailwind CSS",
+    "description": "A utility-first CSS framework for rapidly building custom user interfaces.",
+    "content": "Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs without leaving your HTML. It promotes a different approach to CSS by using small, composable utilities.\n\nKey benefits include rapid development, consistent design systems, responsive design utilities, and customization options. Tailwind includes built-in purging to remove unused CSS in production.\n\nTailwind CSS has gained popularity for its developer experience and is widely used in modern web development, particularly with React, Vue, and other component-based frameworks.",
+    "category": "CSS Framework",
+    "type": "Framework",
+    "maintainer": "Tailwind Labs",
+    "firstRelease": "2017",
+    "license": "MIT"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "security-safety",
+    "title": "خدمات الأمن والسلامة",
+    "description": "دليل شامل لأنظمة وإجراءات الأمن والسلامة المتطورة.",
+    "image": "/placeholder.svg?height=250&width=350",
+    "entryCount": 20,
+    "lastUpdated": "2024-01-22"
+  },
+  {
+    "id": "camera-surveillance",
+    "title": "أنظمة المراقبة والكاميرات",
+    "description": "تقنيات وأنظمة المراقبة الحديثة وطرق التركيب والضبط.",
+    "image": "/placeholder.svg?height=250&width=350",
+    "entryCount": 15,
+    "lastUpdated": "2024-01-20"
+  },
+  {
+    "id": "shipping-logistics",
+    "title": "خدمات الشحن واللوجستيات",
+    "description": "أنظمة الشحن الدولي والمحلي وحلول اللوجستيات المتطورة.",
+    "image": "/placeholder.svg?height=250&width=350",
+    "entryCount": 18,
+    "lastUpdated": "2024-01-19"
+  },
+  {
+    "id": "furniture-moving",
+    "title": "خدمات نقل العفش",
+    "description": "تقنيات وأساليب نقل العفش الآمنة والمتطورة.",
+    "image": "/placeholder.svg?height=250&width=350",
+    "entryCount": 12,
+    "lastUpdated": "2024-01-18"
+  },
+  {
+    "id": "cleaning-maintenance",
+    "title": "خدمات النظافة والصيانة",
+    "description": "أفضل الممارسات في خدمات النظافة والصيانة المتخصصة.",
+    "image": "/placeholder.svg?height=250&width=350",
+    "entryCount": 14,
+    "lastUpdated": "2024-01-17"
+  },
+  {
+    "id": "ac-hvac-systems",
+    "title": "أنظمة التبريد والمكيفات",
+    "description": "تقنيات تركيب وصيانة أنظمة التبريد والتهوية.",
+    "image": "/placeholder.svg?height=250&width=350",
+    "entryCount": 16,
+    "lastUpdated": "2024-01-16"
+  }
+]

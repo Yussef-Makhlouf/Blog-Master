@@ -1,0 +1,24 @@
+[
+  {
+    "id": "design-systems-2024",
+    "title": "Building Scalable Design Systems in 2024",
+    "excerpt": "Modern approaches to creating and maintaining design systems that scale with your organization.",
+    "content": "Design systems have become essential for maintaining consistency and efficiency in modern product development. This article explores the latest trends and best practices for building scalable design systems in 2024.\n\nWe'll cover everything from establishing design tokens and component libraries to implementing governance processes and measuring success. Learn how leading companies structure their design systems and the tools they use to maintain them.\n\nThe article includes practical examples, implementation strategies, and common pitfalls to avoid when building your own design system.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "Alex Thompson",
+    "publishedAt": "2024-01-18",
+    "readTime": "15 min read",
+    "tags": ["Design Systems", "UI/UX", "Component Library", "Design Tokens"]
+  },
+  {
+    "id": "accessibility-first-design",
+    "title": "Accessibility-First Design Principles",
+    "excerpt": "Creating inclusive digital experiences through accessibility-first design approaches.",
+    "content": "Accessibility should be a fundamental consideration in every design decision, not an afterthought. This comprehensive guide explores accessibility-first design principles that ensure your products are usable by everyone.\n\nWe'll examine practical techniques for designing with accessibility in mind, including color contrast considerations, keyboard navigation patterns, screen reader optimization, and inclusive design practices.\n\nThe article provides actionable guidelines, testing strategies, and real-world examples of how accessibility-first design creates better experiences for all users.",
+    "image": "/placeholder.svg?height=400&width=600",
+    "author": "Jordan Kim",
+    "publishedAt": "2024-01-16",
+    "readTime": "11 min read",
+    "tags": ["Accessibility", "Inclusive Design", "UX", "Web Standards"]
+  }
+]
