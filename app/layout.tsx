@@ -1,14 +1,34 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Noto_Sans_Arabic } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import localFont from "next/font/local"
 
-const notoSansArabic = Noto_Sans_Arabic({
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-arabic",
+const lamaSans = localFont({
+  src: [
+    {
+      path: "./fonts/LamaSans-ExtraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "./fonts/LamaSans-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/LamaSans-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/LamaSans-BoldItalic.woff",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-lama-sans",
   display: "swap",
 })
 
@@ -38,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={`font-arabic ${notoSansArabic.variable} antialiased`}>
+      <body className={`${lamaSans.variable} font-sans antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

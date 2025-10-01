@@ -4,10 +4,14 @@ import Image from "next/image"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import Breadcrumb from "@/components/breadcrumb"
+import SectionHeader from "@/components/section-header"
+import GridLayout from "@/components/grid-layout"
+import ArticleCard from "@/components/article-card"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { getArticle, getBlogTopic, getTopicArticles } from "@/lib/data"
-import { Calendar, Clock, User, Share2, BookOpen } from "lucide-react"
+import { Calendar, Clock, User, Share2, BookOpen, Twitter, Linkedin, Facebook } from "lucide-react"
 
 interface ArticlePageProps {
   params: {
@@ -38,7 +42,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   if (!article) {
     return {
-      title: "Article Not Found",
+      title: "المقال غير موجود",
     }
   }
 
@@ -65,9 +69,12 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const [article, topic] = await Promise.all([getArticle(params.topic, params.articleId), getBlogTopic(params.topic)])
+  const [article, topic] = await Promise.all([
+    getArticle(params.topic, params.articleId),
+    getBlogTopic(params.topic),
+  ])
 
-  if (!article || !topic) {
+  if (!article) {
     notFound()
   }
 
@@ -82,7 +89,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <Breadcrumb
               items={[
                 { label: "Blog", href: "/blog" },
-                { label: topic.title, href: `/blog/${params.topic}` },
+                { label: topic?.title || "", href: `/blog/${params.topic}` },
                 { label: article.title },
               ]}
               className="mb-8"
@@ -90,7 +97,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             <div className="space-y-6">
               <div className="flex flex-wrap gap-2">
-                {article.tags.map((tag) => (
+                {article.tags.map((tag: string) => (
                   <Badge key={tag} variant="secondary">
                     {tag}
                   </Badge>
@@ -108,7 +115,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 </div>
                 <div className="flex items-center">
                   <Calendar className="h-4 w-4 mr-2" />
-                  {new Date(article.publishedAt).toLocaleDateString("en-US", {
+                  {new Date(article.publishedAt).toLocaleDateString("ar-SA", {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
@@ -140,67 +147,88 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 </div>
 
                 <div className="prose prose-lg max-w-none">
-                  {article.content.split("\n\n").map((paragraph, index) => (
+                  {article.content.split("\n\n").map((paragraph: string, index: number) => (
                     <p key={index} className="mb-6 text-foreground leading-relaxed">
                       {paragraph}
                     </p>
                   ))}
                 </div>
 
-                {/* Article Footer */}
+                {/* Tags */}
                 <div className="mt-12 pt-8 border-t border-border">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-sm text-muted-foreground">Share this article:</span>
-                      <button className="p-2 text-muted-foreground hover:text-primary transition-colors">
-                        <Share2 className="h-4 w-4" />
-                      </button>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {article.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          #{tag}
-                        </Badge>
-                      ))}
-                    </div>
+                  <h3 className="text-xl font-semibold mb-4">الوسوم</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {article.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-3 py-1">
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </div>
 
               {/* Sidebar */}
               <div className="lg:col-span-1">
-                <div className="sticky top-8 space-y-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="flex items-center text-lg">
-                        <BookOpen className="h-5 w-5 mr-2" />
-                        Article Info
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-3 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Author</span>
-                        <span className="font-medium">{article.author}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Published</span>
-                        <span className="font-medium">{new Date(article.publishedAt).toLocaleDateString()}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Read Time</span>
-                        <span className="font-medium">{article.readTime}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Category</span>
-                        <span className="font-medium">{topic.title}</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                <Card className="sticky top-24">
+                  <CardHeader>
+                    <CardTitle className="text-lg">تفاصيل المقال</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <User className="h-4 w-4 mr-2" />
+                      {article.author}
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Calendar className="h-4 w-4 mr-2" />
+                      {new Date(article.publishedAt).toLocaleDateString("ar-SA", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Clock className="h-4 w-4 mr-2" />
+                      {article.readTime}
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <BookOpen className="h-4 w-4 mr-2" />
+                      {article.wordCount} كلمة
+                    </div>
+                  </CardContent>
+                </Card>
+
+ 
               </div>
             </div>
           </div>
         </article>
+
+        {/* Related Articles */}
+        <section className="py-20 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeader
+              title="مقالات ذات صلة"
+              description="اكتشف مقالات أخرى قد تهمك في نفس المجال"
+              centered={false}
+            />
+
+            <GridLayout columns={3} gap="md" className="mt-12">
+              {article.relatedArticles?.slice(0, 3).map((relatedArticle: any) => (
+                <ArticleCard
+                  key={relatedArticle.id}
+                  title={relatedArticle.title}
+                  excerpt={relatedArticle.description}
+                  image={relatedArticle.image}
+                  href={`/blog/${relatedArticle.topic}/${relatedArticle.id}`}
+                  author={relatedArticle.author}
+                  publishedAt={relatedArticle.publishedAt}
+                  readTime={relatedArticle.readTime}
+                  tags={relatedArticle.tags || []}
+                />
+              ))}
+            </GridLayout>
+          </div>
+        </section>
       </main>
 
       <Footer />

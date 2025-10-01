@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: "Service Not Found",
+      title: "الخدمة غير موجودة",
     }
   }
 

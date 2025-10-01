@@ -8,23 +8,23 @@ import Breadcrumb from "@/components/breadcrumb"
 import { getEncyclopediaCategories } from "@/lib/data"
 
 export const metadata: Metadata = {
-  title: "Encyclopedia | Comprehensive Knowledge Base",
+  title: "الموسوعة | قاعدة معرفة شاملة",
   description:
-    "Explore our extensive encyclopedia covering various topics in technology, programming, databases, cloud computing, security, and DevOps.",
+    "استكشف موسوعتنا الواسعة التي تغطي مواضيع مختلفة في التكنولوجيا والبرمجة وقواعد البيانات والحوسبة السحابية والأمن وDevOps.",
   keywords: [
-    "encyclopedia",
-    "knowledge base",
-    "technology",
-    "programming",
-    "databases",
-    "cloud computing",
-    "security",
-    "devops",
+    "موسوعة",
+    "قاعدة معرفة",
+    "تكنولوجيا",
+    "برمجة",
+    "قواعد بيانات",
+    "حوسبة سحابية",
+    "أمن",
+    "ديفوبس",
   ],
   openGraph: {
-    title: "Encyclopedia | Comprehensive Knowledge Base",
+    title: "الموسوعة | قاعدة معرفة شاملة",
     description:
-      "Explore our extensive encyclopedia covering various topics in technology, programming, databases, cloud computing, security, and DevOps.",
+      "استكشف موسوعتنا الواسعة التي تغطي مواضيع مختلفة في التكنولوجيا والبرمجة وقواعد البيانات والحوسبة السحابية والأمن وDevOps.",
     type: "website",
   },
 }
@@ -38,26 +38,43 @@ export default async function EncyclopediaPage() {
 
       <main>
         <PageHeader
-          title="Knowledge Encyclopedia"
-          description="Discover comprehensive information about technology, programming languages, frameworks, tools, and best practices in our extensive knowledge base."
+          title="موسوعة المعرفة"
+          description="اكتشف معلومات شاملة حول التكنولوجيا ولغات البرمجة والأطر وال أدوات وأفضل الممارسات في قاعدة معرفتنا الواسعة."
         >
           <Breadcrumb items={[{ label: "Encyclopedia" }]} className="justify-center" />
         </PageHeader>
 
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <GridLayout columns={3} gap="lg">
-              {categories.map((category) => (
-                <EncyclopediaCard
-                  key={category.id}
-                  id={category.id}
-                  title={category.title}
-                  description={category.description}
-                  image={category.image}
-                  entryCount={category.entryCount}
-                  lastUpdated={category.lastUpdated}
-                />
-              ))}
+            <GridLayout columns={1} gap="lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {categories.slice(0, 2).map((category) => (
+                  <EncyclopediaCard
+                    key={category.id}
+                    id={category.id}
+                    title={category.title}
+                    description={category.description}
+                    image={category.image}
+                    entryCount={category.entryCount}
+                    lastUpdated={category.lastUpdated}
+                    variant="list"
+                  />
+                ))}
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {categories.slice(2).map((category) => (
+                  <EncyclopediaCard
+                    key={category.id}
+                    id={category.id}
+                    title={category.title}
+                    description={category.description}
+                    image={category.image}
+                    entryCount={category.entryCount}
+                    lastUpdated={category.lastUpdated}
+                    variant="compact"
+                  />
+                ))}
+              </div>
             </GridLayout>
           </div>
         </section>
@@ -65,18 +82,18 @@ export default async function EncyclopediaPage() {
         {/* Search Section */}
         <section className="py-20 bg-muted/30">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-6">Looking for Something Specific?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-6">تبحث عن شيء محدد؟</h2>
             <p className="text-lg text-muted-foreground text-pretty mb-8 leading-relaxed">
-              Use our search feature to quickly find the information you need across all encyclopedia categories.
+              استخدم ميزة البحث لدينا للعثور بسرعة على المعلومات التي تحتاجها في جميع فئات الموسوعة.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
                 type="search"
-                placeholder="Search encyclopedia..."
+                placeholder="ابحث في الموسوعة..."
                 className="flex-1 px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               />
               <button className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors">
-                Search
+                بحث
               </button>
             </div>
           </div>

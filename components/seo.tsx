@@ -45,7 +45,7 @@ export default function SEO({
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:url" content={`${siteUrl}${canonical || ""}`} />
-      <meta property="og:site_name" content="Professional Website" />
+      <meta property="og:site_name" content="الموقع الاحترافي" />
 
       {/* Article specific */}
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}
@@ -62,7 +62,7 @@ export default function SEO({
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="language" content="English" />
+      <meta name="language" content="Arabic" />
     </Head>
   )
 }

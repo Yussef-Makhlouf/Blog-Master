@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
   if (!category) {
     return {
-      title: "Category Not Found",
+      title: "الفئة غير موجودة",
     }
   }
 
@@ -71,7 +71,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {entries.length > 0 ? (
               <GridLayout columns={2} gap="lg">
-                {entries.map((entry) => (
+                {entries.map((entry: any) => (
                   <Card
                     key={entry.id}
                     className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
@@ -81,7 +81,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                         <CardTitle className="text-xl font-semibold text-balance group-hover:text-primary transition-colors">
                           {entry.title}
                         </CardTitle>
-                        <Badge variant="secondary" className="ml-2 flex-shrink-0">
+                        <Badge variant="secondary" className="mr-2 flex-shrink-0">
                           {entry.category}
                         </Badge>
                       </div>
@@ -96,7 +96,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                       </div>
 
                       <div className="flex flex-wrap gap-2">
-                        {entry.paradigms?.slice(0, 3).map((paradigm) => (
+                        {entry.paradigms?.slice(0, 3).map((paradigm: string) => (
                           <Badge key={paradigm} variant="outline" className="text-xs">
                             {paradigm}
                           </Badge>
@@ -119,7 +119,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                         {entry.firstAppeared && (
                           <div className="flex items-center">
                             <Calendar className="h-3 w-3 mr-1" />
-                            Since {entry.firstAppeared}
+                            منذ {entry.firstAppeared}
                           </div>
                         )}
                         {entry.type && (
@@ -135,9 +135,9 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </GridLayout>
             ) : (
               <div className="text-center py-12">
-                <h3 className="text-2xl font-semibold mb-4">No Entries Yet</h3>
+                <h3 className="text-2xl font-semibold mb-4">لا توجد مدخلات بعد</h3>
                 <p className="text-muted-foreground">
-                  We're working on adding more content to this category. Check back soon!
+                  نحن نعمل على إضافة المزيد من المحتوى لهذه الفئة. تحقق مرة أخرى قريباً!
                 </p>
               </div>
             )}
@@ -151,19 +151,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div className="space-y-2">
                   <div className="text-3xl font-bold text-primary">{entries.length}</div>
-                  <div className="text-muted-foreground">Total Entries</div>
+                  <div className="text-muted-foreground">إجمالي المدخلات</div>
                 </div>
                 <div className="space-y-2">
                   <div className="text-3xl font-bold text-primary">
-                    {new Set(entries.flatMap((entry) => entry.paradigms || [])).size}
+                    {new Set(entries.flatMap((entry: any) => entry.paradigms || [])).size}
                   </div>
-                  <div className="text-muted-foreground">Paradigms Covered</div>
+                  <div className="text-muted-foreground">النماذج المغطاة</div>
                 </div>
                 <div className="space-y-2">
                   <div className="text-3xl font-bold text-primary">
                     {new Date(category.lastUpdated).toLocaleDateString()}
                   </div>
-                  <div className="text-muted-foreground">Last Updated</div>
+                  <div className="text-muted-foreground">آخر تحديث</div>
                 </div>
               </div>
             </div>

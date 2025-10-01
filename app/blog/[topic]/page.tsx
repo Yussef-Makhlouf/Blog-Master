@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: TopicPageProps): Promise<Meta
 
   if (!topic) {
     return {
-      title: "Topic Not Found",
+      title: "الموضوع غير موجود",
     }
   }
 
@@ -63,7 +63,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {articles.length > 0 ? (
               <GridLayout columns={2} gap="lg">
-                {articles.map((article) => (
+                {articles.map((article: any) => (
                   <ArticleCard
                     key={article.id}
                     title={article.title}
@@ -79,9 +79,9 @@ export default async function TopicPage({ params }: TopicPageProps) {
               </GridLayout>
             ) : (
               <div className="text-center py-12">
-                <h3 className="text-2xl font-semibold mb-4">No Articles Yet</h3>
+                <h3 className="text-2xl font-semibold mb-4">لا توجد مقالات بعد</h3>
                 <p className="text-muted-foreground">
-                  We're working on adding more content to this topic. Check back soon!
+                  نحن نعمل على إضافة المزيد من المحتوى لهذا الموضوع. تحقق مرة أخرى قريباً!
                 </p>
               </div>
             )}

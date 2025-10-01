@@ -6,9 +6,16 @@ interface GridLayoutProps {
   columns?: 1 | 2 | 3 | 4
   gap?: "sm" | "md" | "lg"
   className?: string
+  variant?: "default" | "masonry" | "alternating" | "featured"
 }
 
-export default function GridLayout({ children, columns = 3, gap = "md", className }: GridLayoutProps) {
+export default function GridLayout({ 
+  children, 
+  columns = 3, 
+  gap = "md", 
+  className,
+  variant = "default"
+}: GridLayoutProps) {
   const gridCols = {
     1: "grid-cols-1",
     2: "grid-cols-1 md:grid-cols-2",
@@ -22,5 +29,20 @@ export default function GridLayout({ children, columns = 3, gap = "md", classNam
     lg: "gap-8",
   }
 
-  return <div className={cn("grid", gridCols[columns], gridGap[gap], className)}>{children}</div>
+  return (
+    <div className={cn(
+      "grid", 
+      gridCols[columns], 
+      gridGap[gap],
+      {
+        "grid-rows-masonry": variant === "masonry",
+        "grid-alternating": variant === "alternating",
+        "grid-featured": variant === "featured",
+      },
+      "animate-fade-in transition-all duration-300",
+      className
+    )}>
+      {children}
+    </div>
+  )
 }

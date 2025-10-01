@@ -28,7 +28,7 @@ export default function ArticleCard({
   className,
 }: ArticleCardProps) {
   return (
-    <Card className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${className}`}>
+    <Card className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 animate-fade-in ${className}`}>
       <div className="relative overflow-hidden rounded-t-lg">
         <Image
           src={image || "/placeholder.svg"}

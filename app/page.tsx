@@ -81,19 +81,33 @@ export default async function HomePage() {
               description="نقدم مجموعة شاملة من الخدمات المصممة لمساعدة عملك على النمو والنجاح في السوق التنافسي اليوم."
             />
 
-            <GridLayout columns={3} gap="lg">
-              {featuredServices.map((service) => (
-                <ServiceCard
-                  key={service.id}
-                  id={service.id}
-                  title={service.title}
-                  description={service.description}
-                  image={service.image}
-                  features={service.features}
-                  price={service.price}
-                  duration={service.duration}
-                />
-              ))}
+            <GridLayout columns={1} gap="lg">
+              <ServiceCard
+                id={featuredServices[0].id}
+                title={featuredServices[0].title}
+                description={featuredServices[0].description}
+                image={featuredServices[0].image}
+                features={featuredServices[0].features}
+                price={featuredServices[0].price}
+                duration={featuredServices[0].duration}
+                variant="featured"
+                className="mb-12"
+              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {featuredServices.slice(1).map((service) => (
+                  <ServiceCard
+                    key={service.id}
+                    id={service.id}
+                    title={service.title}
+                    description={service.description}
+                    image={service.image}
+                    features={service.features}
+                    price={service.price}
+                    duration={service.duration}
+                    variant="horizontal"
+                  />
+                ))}
+              </div>
             </GridLayout>
 
             <div className="text-center mt-12">
@@ -116,8 +130,8 @@ export default async function HomePage() {
               description="ابق محدثاً مع أحدث الاتجاهات وأفضل الممارسات والرؤى الخبيرة عبر مواضيع مختلفة في التكنولوجيا والأعمال."
             />
 
-            <GridLayout columns={3} gap="lg">
-              {featuredBlogTopics.map((topic) => (
+            <GridLayout columns={2} gap="lg">
+              {featuredBlogTopics.map((topic, index) => (
                 <ContentCard
                   key={topic.id}
                   title={topic.title}
@@ -125,6 +139,7 @@ export default async function HomePage() {
                   image={topic.image}
                   href={`/blog/${topic.id}`}
                   badge={`${topic.articleCount} مقال`}
+                  variant={index === 0 ? "overlay" : "default"}
                 />
               ))}
             </GridLayout>
@@ -149,18 +164,35 @@ export default async function HomePage() {
               description="استكشف موسوعتنا الواسعة التي تغطي مواضيع مختلفة في التكنولوجيا والبرمجة والابتكار الرقمي."
             />
 
-            <GridLayout columns={3} gap="lg">
-              {featuredEncyclopediaCategories.map((category) => (
-                <EncyclopediaCard
-                  key={category.id}
-                  id={category.id}
-                  title={category.title}
-                  description={category.description}
-                  image={category.image}
-                  entryCount={category.entryCount}
-                  lastUpdated={category.lastUpdated}
-                />
-              ))}
+            <GridLayout columns={1} gap="lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {featuredEncyclopediaCategories.slice(0, 2).map((category) => (
+                  <EncyclopediaCard
+                    key={category.id}
+                    id={category.id}
+                    title={category.title}
+                    description={category.description}
+                    image={category.image}
+                    entryCount={category.entryCount}
+                    lastUpdated={category.lastUpdated}
+                    variant="list"
+                  />
+                ))}
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {featuredEncyclopediaCategories.slice(2).map((category) => (
+                  <EncyclopediaCard
+                    key={category.id}
+                    id={category.id}
+                    title={category.title}
+                    description={category.description}
+                    image={category.image}
+                    entryCount={category.entryCount}
+                    lastUpdated={category.lastUpdated}
+                    variant="compact"
+                  />
+                ))}
+              </div>
             </GridLayout>
 
             <div className="text-center mt-12">
