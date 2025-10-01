@@ -9,7 +9,6 @@ import GridLayout from "@/components/grid-layout"
 import ArticleCard from "@/components/article-card"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { getArticle, getBlogTopic, getTopicArticles } from "@/lib/data"
 import { Calendar, Clock, User, Share2, BookOpen, Twitter, Linkedin, Facebook } from "lucide-react"
 
@@ -81,10 +80,35 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      
+      {/* Reading Progress Bar - Fixed at top */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-muted z-50">
+        <div className="h-full bg-primary w-0 reading-progress-bar"></div>
+      </div>
+      
+      {/* Mobile Reading Controls - Fixed at bottom on small screens */}
+      <div className="md:hidden fixed bottom-0 left-0 w-full bg-background border-t border-border z-40 p-2 flex justify-around items-center">
+        <button className="p-2 rounded-full hover:bg-muted transition-colors duration-200 flex flex-col items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span className="text-xs mt-1">القراءة</span>
+        </button>
+        <button className="p-2 rounded-full hover:bg-muted transition-colors duration-200 flex flex-col items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span className="text-xs mt-1">حفظ</span>
+        </button>
+        <button className="p-2 rounded-full hover:bg-muted transition-colors duration-200 flex flex-col items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span className="text-xs mt-1">مشاركة</span>
+        </button>
+        <button className="p-2 rounded-full hover:bg-muted transition-colors duration-200 flex flex-col items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span className="text-xs mt-1">تعليق</span>
+        </button>
+      </div>
 
       <main>
         {/* Article Header */}
-        <div className="bg-muted/30 py-12">
+        <div className="bg-gradient-to-b from-muted/50 to-background py-12 animate-fade-in">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb
               items={[
@@ -98,32 +122,34 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <div className="space-y-6">
               <div className="flex flex-wrap gap-2">
                 {article.tags.map((tag: string) => (
-                  <Badge key={tag} variant="secondary">
+                  <Badge key={tag} variant="secondary" className="transition-all duration-200 hover:bg-primary/20 hover:scale-105">
                     {tag}
                   </Badge>
                 ))}
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-balance">{article.title}</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-balance bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">{article.title}</h1>
 
-              <p className="text-xl text-muted-foreground text-pretty leading-relaxed">{article.excerpt}</p>
+              <p className="text-xl text-muted-foreground text-pretty leading-relaxed border-r-4 border-primary/30 pr-4">{article.excerpt}</p>
 
-              <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center">
-                  <User className="h-4 w-4 mr-2" />
-                  {article.author}
+              <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground bg-muted/30 p-4 rounded-lg shadow-sm">
+                <div className="flex items-center group">
+                  <User className="h-4 w-4 mx-2 group-hover:text-primary transition-colors duration-200" />
+                  <span className="group-hover:text-primary transition-colors duration-200">{article.author}</span>
                 </div>
-                <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {new Date(article.publishedAt).toLocaleDateString("ar-SA", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                <div className="flex items-center group">
+                  <Calendar className="h-4 w-4 mx-2 group-hover:text-primary transition-colors duration-200" />
+                  <span className="group-hover:text-primary transition-colors duration-200">
+                    {new Date(article.publishedAt).toLocaleDateString("ar-SA", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
                 </div>
-                <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-2" />
-                  {article.readTime}
+                <div className="flex items-center group">
+                  <Clock className="h-4 w-4 mx-2 group-hover:text-primary transition-colors duration-200" />
+                  <span className="group-hover:text-primary transition-colors duration-200">{article.readTime}</span>
                 </div>
               </div>
             </div>
@@ -131,35 +157,54 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </div>
 
         {/* Article Content */}
-        <article className="py-12">
+        <article className="py-12 animate-fade-in">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
               {/* Main Content */}
               <div className="lg:col-span-3">
-                <div className="relative mb-8">
+                <div className="relative mb-8 group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                   <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
                     width={800}
                     height={400}
-                    className="w-full h-auto rounded-lg shadow-lg"
+                    className="w-full h-auto rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-[1.01]"
+                    priority
                   />
                 </div>
 
                 <div className="prose prose-lg max-w-none">
                   {article.content.split("\n\n").map((paragraph: string, index: number) => (
-                    <p key={index} className="mb-6 text-foreground leading-relaxed">
+                    <p key={index} className="mb-6 text-foreground leading-relaxed first-letter:text-3xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-right">
                       {paragraph}
                     </p>
                   ))}
                 </div>
 
+                {/* Share Buttons */}
+                <div className="flex items-center justify-center space-x-4 my-8 border-y border-border py-4">
+                  <span className="text-sm font-medium">مشاركة المقال:</span>
+                  <button className="p-2 rounded-full bg-muted hover:bg-primary/20 transition-colors duration-200">
+                    <Twitter className="h-5 w-5" />
+                  </button>
+                  <button className="p-2 rounded-full bg-muted hover:bg-primary/20 transition-colors duration-200">
+                    <Facebook className="h-5 w-5" />
+                  </button>
+                  <button className="p-2 rounded-full bg-muted hover:bg-primary/20 transition-colors duration-200">
+                    <Linkedin className="h-5 w-5" />
+                  </button>
+                  <button className="p-2 rounded-full bg-muted hover:bg-primary/20 transition-colors duration-200">
+                    <Share2 className="h-5 w-5" />
+                  </button>
+                </div>
+
                 {/* Tags */}
                 <div className="mt-12 pt-8 border-t border-border">
-                  <h3 className="text-xl font-semibold mb-4">الوسوم</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-primary">الوسوم</h3>
                   <div className="flex flex-wrap gap-2">
                     {article.tags.map((tag: string) => (
-                      <Badge key={tag} variant="secondary" className="text-sm px-3 py-1">
+                      <Badge key={tag} variant="secondary" className="text-sm px-3 py-1 transition-all duration-200 hover:bg-primary/20 hover:scale-105">
                         {tag}
                       </Badge>
                     ))}
@@ -169,42 +214,55 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
               {/* Sidebar */}
               <div className="lg:col-span-1">
-                <Card className="sticky top-24">
-                  <CardHeader>
-                    <CardTitle className="text-lg">تفاصيل المقال</CardTitle>
+                <Card className="sticky top-24 border-primary/20 hover:border-primary/50 transition-colors duration-300">
+                  <CardHeader className="bg-muted/30">
+                    <CardTitle className="text-lg text-primary">تفاصيل المقال</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <User className="h-4 w-4 mr-2" />
+                  <CardContent className="space-y-4 pt-4">
+                    <div className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                      <User className="h-4 w-4 mx-2 text-primary" />
                       {article.author}
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4 mr-2" />
+                    <div className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                      <Calendar className="h-4 w-4 mx-2 text-primary" />
                       {new Date(article.publishedAt).toLocaleDateString("ar-SA", {
                         year: "numeric",
                         month: "long",
                         day: "numeric",
                       })}
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Clock className="h-4 w-4 mr-2" />
+                    <div className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                      <Clock className="h-4 w-4 mx-2 text-primary" />
                       {article.readTime}
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <BookOpen className="h-4 w-4 mr-2" />
+                    <div className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+                      <BookOpen className="h-4 w-4 mx-2 text-primary" />
                       {article.wordCount} كلمة
                     </div>
                   </CardContent>
                 </Card>
 
- 
+                {/* Table of Contents */}
+                <Card className="mt-6 border-primary/20 hover:border-primary/50 transition-colors duration-300">
+                  <CardHeader className="bg-muted/30">
+                    <CardTitle className="text-lg text-primary">محتويات المقال</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-4">
+                    <ul className="space-y-2 text-sm">
+                      <li className="hover:text-primary transition-colors duration-200 cursor-pointer">المقدمة</li>
+                      <li className="hover:text-primary transition-colors duration-200 cursor-pointer">العناصر الرئيسية</li>
+                      <li className="hover:text-primary transition-colors duration-200 cursor-pointer">التفاصيل والشرح</li>
+                      <li className="hover:text-primary transition-colors duration-200 cursor-pointer">الخلاصة</li>
+                    </ul>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
         </article>
 
         {/* Related Articles */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20 bg-gradient-to-b from-background to-muted/30 animate-fade-in">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               title="مقالات ذات صلة"
@@ -224,14 +282,37 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   publishedAt={relatedArticle.publishedAt}
                   readTime={relatedArticle.readTime}
                   tags={relatedArticle.tags || []}
+                  className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-primary/10 hover:border-primary/30"
                 />
               ))}
             </GridLayout>
+            
+            <div className="flex justify-center mt-12">
+              <button className="px-6 py-3 bg-muted hover:bg-primary/10 text-foreground rounded-md transition-colors duration-200 flex items-center group">
+                عرض المزيد من المقالات
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
           </div>
         </section>
       </main>
 
       <Footer />
+      
+      {/* Client-side script for reading progress */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.querySelector('.reading-progress-bar');
+            window.addEventListener('scroll', function() {
+              const scrollTop = window.scrollY;
+              const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+              const scrollPercent = scrollTop / docHeight;
+              progressBar.style.width = scrollPercent * 100 + '%';
+            });
+          });
+        `
+      }} />
     </div>
   )
 }

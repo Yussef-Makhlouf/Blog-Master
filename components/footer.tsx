@@ -15,16 +15,16 @@ export default function Footer() {
               منصة شاملة تضم خدمات احترافية ومحتوى مدونة ثري وموارد موسوعية واسعة لمساعدتك على النمو والتعلم.
             </p>
             <div className="flex space-x-reverse space-x-4">
-              <Link href="#" className="hover:text-primary transition-colors bg-background p-2 rounded-full shadow-sm">
+              <Link href="#" className="hover:text-primary transition-colors px-2 bg-background p-2 rounded-full shadow-sm">
                 <Github className="h-5 w-5" />
               </Link>
-              <Link href="#" className="hover:text-primary transition-colors bg-background p-2 rounded-full shadow-sm">
+              <Link href="#" className="hover:text-primary transition-colors px-2 bg-background p-2 rounded-full shadow-sm">
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link href="#" className="hover:text-primary transition-colors bg-background p-2 rounded-full shadow-sm">
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" className="hover:text-primary transition-colors bg-background p-2 rounded-full shadow-sm">
+              <Link href="#" className="hover:text-primary px-2 transition-colors bg-background p-2 rounded-full shadow-sm">
                 <Mail className="h-5 w-5" />
               </Link>
             </div>
@@ -68,19 +68,19 @@ export default function Footer() {
             <ul className="space-y-3 text-base">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-3 mt-0.5 text-primary" />
-                <span>info@example.com</span>
+                <span className="px-2.5">info@example.com</span>
               </li>
               <li className="flex items-start">
-                <Phone className="h-5 w-5 mr-3 mt-0.5 text-primary" />
-                <span>(555) 123-4567</span>
+                <Phone className="h-5 w-5 mr-3 mt-0.5 text-primary " />
+                <span className="px-2.5">(555) 123-4567</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 mt-0.5 text-primary" />
-                <span>شارع الأعمال 123، المدينة، المنطقة 12345</span>
+                <span className="px-2.5">شارع الأعمال 123، المدينة، المنطقة 12345</span>
               </li>
             </ul>
             <div className="mt-6">
-              <h5 className="text-base font-semibold text-foreground mb-3">النشرة البريدية</h5>
+              <h5 className="text-base font-semibold text-foreground mb-3 px-2.5">النشرة البريدية</h5>
               <div className="flex">
                 <input 
                   type="email" 
@@ -88,7 +88,7 @@ export default function Footer() {
                   className="flex-1 px-3 py-2 text-sm border border-border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
                 />
                 <button className="bg-primary text-primary-foreground p-2 rounded-r-lg hover:bg-primary/90 transition-colors">
-                  <Send className="h-4 w-4" />
+                  <Send className="h-4 w-4 px-2.5" />
                 </button>
               </div>
             </div>
