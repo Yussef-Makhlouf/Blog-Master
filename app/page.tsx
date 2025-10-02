@@ -78,8 +78,10 @@ export default async function HomePage() {
                 description={featuredServices[0].description}
                 image={featuredServices[0].image}
                 features={featuredServices[0].features}
-                price={featuredServices[0].price}
                 duration={featuredServices[0].duration}
+                availability={featuredServices[0].availability}
+                support={featuredServices[0].support}
+                emergency={featuredServices[0].emergency}
                 variant="featured"
                 className="mb-8 sm:mb-12"
               />
@@ -92,8 +94,10 @@ export default async function HomePage() {
                     description={service.description}
                     image={service.image}
                     features={service.features}
-                    price={service.price}
                     duration={service.duration}
+                    availability={service.availability}
+                    support={service.support}
+                    emergency={service.emergency}
                     variant="horizontal"
                   />
                 ))}

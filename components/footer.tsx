@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { Github, Twitter, Linkedin, Mail, Phone, MapPin, Send } from "lucide-react"
+import { Github, Twitter, Linkedin, Mail, Phone, MapPin, Send, Move, Sparkles, Shield } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="bg-muted border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
@@ -14,17 +14,17 @@ export default function Footer() {
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
               منصة شاملة تضم خدمات احترافية ومحتوى مدونة ثري وموارد موسوعية واسعة لمساعدتك على النمو والتعلم.
             </p>
-            <div className="flex space-x-reverse space-x-4">
-              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 rounded-full bg-muted hover:bg-primary/10 shadow-sm">
+            <div className="flex space-x-reverse space-x-4" dir="rtl">
+              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 rounded-full bg-background hover:bg-primary/10 shadow-sm">
                 <Github className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 rounded-full bg-muted hover:bg-primary/10 shadow-sm">
+              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 rounded-full bg-background hover:bg-primary/10 shadow-sm">
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 rounded-full bg-muted hover:bg-primary/10 shadow-sm">
+              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 rounded-full bg-background hover:bg-primary/10 shadow-sm">
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 rounded-full bg-muted hover:bg-primary/10 shadow-sm">
+              <Link href="#" className="text-foreground hover:text-primary transition-colors p-3 mx-2.5 rounded-full bg-background hover:bg-primary/10 shadow-sm">
                 <Mail className="h-5 w-5" />
               </Link>
             </div>
@@ -67,34 +67,47 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-foreground mb-6">الخدمات</h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/services/web-development" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
-                  <span className="mr-2 text-primary">→</span> تطوير المواقع
+                <Link href="/services/furniture-moving" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
+                  <span className="mr-2 text-primary">→</span> نقل العفش
                 </Link>
               </li>
               <li>
-                <Link href="/services/mobile-apps" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
-                  <span className="mr-2 text-primary">→</span> تطبيقات الجوال
+                <Link href="/services/cleaning-services" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
+                  <span className="mr-2 text-primary">→</span> خدمات النظافة
                 </Link>
               </li>
               <li>
-                <Link href="/services/ui-ux-design" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
-                  <span className="mr-2 text-primary">→</span> تصميم UI/UX
+                <Link href="/services/security-systems" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
+                  <span className="mr-2 text-primary">→</span> الكاميرات والأمان
                 </Link>
               </li>
               <li>
-                <Link href="/services/digital-marketing" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
-                  <span className="mr-2 text-primary">→</span> التسويق الرقمي
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/consulting" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
-                  <span className="mr-2 text-primary">→</span> الاستشارات
+                <Link href="/services/ac-services" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
+                  <span className="mr-2 text-primary">→</span> تكييف الهواء
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold text-foreground mb-6">معلومات الاتصال</h4>
+            <ul className="space-y-4 text-muted-foreground">
+              <li className="flex items-start">
+                <MapPin className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                <span>المملكة العربية السعوديه</span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
+                <span>+965 1234 5678</span>
+              </li>
+              <li className="flex items-center">
+                <Mail className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
+                <span>info@golden-gulf-moon.com</span>
+              </li>
+            </ul>
 
+          </div>
         </div>
 
         <div className="border-t border-border mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
@@ -102,12 +115,7 @@ export default function Footer() {
             &copy; {currentYear} قمر الخليج الذهبي. جميع الحقوق محفوظة.
           </p>
           <div className="flex space-x-reverse space-x-6">
-            <Link href="/privacy" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-              سياسة الخصوصية
-            </Link>
-            <Link href="/terms" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-              الشروط والأحكام
-            </Link>
+            
           </div>
         </div>
       </div>

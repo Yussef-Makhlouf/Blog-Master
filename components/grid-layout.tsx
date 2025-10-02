@@ -4,6 +4,10 @@ import { cn } from "@/lib/utils"
 interface GridLayoutProps {
   children: ReactNode
   columns?: 1 | 2 | 3 | 4
+  sm?: 1 | 2 | 3 | 4
+  md?: 1 | 2 | 3 | 4
+  lg?: 1 | 2 | 3 | 4
+  xl?: 1 | 2 | 3 | 4
   gap?: "sm" | "md" | "lg"
   className?: string
   variant?: "default" | "masonry" | "alternating" | "featured" | "staggered" | "mixed"
@@ -12,16 +16,25 @@ interface GridLayoutProps {
 export default function GridLayout({ 
   children, 
   columns = 3, 
+  sm,
+  md,
+  lg,
+  xl,
   gap = "md", 
   className,
   variant = "default"
 }: GridLayoutProps) {
   // Enhanced responsive grid configuration
-  const gridCols = {
-    1: "grid-cols-1",
-    2: "grid-cols-1 xs:grid-cols-2 sm:grid-cols-2",
-    3: "grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3",
-    4: "grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
+  const getGridCols = () => {
+    const baseClass = `grid-cols-${columns}`
+    const classes = [baseClass]
+    
+    if (sm) classes.push(`sm:grid-cols-${sm}`)
+    if (md) classes.push(`md:grid-cols-${md}`)
+    if (lg) classes.push(`lg:grid-cols-${lg}`)
+    if (xl) classes.push(`xl:grid-cols-${xl}`)
+    
+    return classes.join(' ')
   }
 
   const gridGap = {
@@ -51,7 +64,7 @@ export default function GridLayout({
   return (
     <div className={cn(
       "grid",
-      gridCols[columns],
+      getGridCols(),
       gridGap[gap],
       getVariantClasses(),
       "animate-fade-in transition-all duration-500",

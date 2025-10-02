@@ -2,34 +2,34 @@
   {
     "id": "javascript",
     "title": "JavaScript",
-    "description": "A versatile programming language for web development, server-side applications, and more.",
-    "content": "JavaScript is a high-level, interpreted programming language that has become one of the most popular languages in the world. Originally designed for web browsers, JavaScript has expanded to server-side development, mobile applications, and desktop software.\n\nKey features include dynamic typing, first-class functions, prototype-based object orientation, and event-driven programming. Modern JavaScript (ES6+) includes features like arrow functions, classes, modules, and async/await.\n\nJavaScript is essential for front-end development and powers frameworks like React, Vue, and Angular. On the server side, Node.js enables JavaScript for backend development.",
-    "category": "Web Development",
-    "difficulty": "Beginner to Advanced",
-    "popularity": "Very High",
+    "description": "لغة برمجة متعددة الاستخدامات لتطوير الويب، وتطبيقات الخادم، والمزيد.",
+    "content": "JavaScript هي لغة برمجة عالية المستوى ومُفسرة أصبحت واحدة من أكثر اللغات شعبية في العالم. صُممت في الأصل لمتصفحات الويب، وتوسعت JavaScript لتشمل تطوير الخادم، والتطبيقات المحمولة، والبرامج المكتبية.\n\nتشمل الميزات الرئيسية الكتابة الديناميكية، والدوال من الدرجة الأولى، والتوجيه نحو الكائنات القائم على النموذج، والبرمجة المعتمدة على الأحداث. يتضمن JavaScript الحديث (ES6+) ميزات مثل الدوال السهمية، والفئات، والوحدات، وasync/await.\n\nJavaScript ضرورية لتطوير الواجهة الأمامية وتدعم أطر العمل مثل React وVue وAngular. في جانب الخادم، يمكّن Node.js JavaScript من تطوير الواجهة الخلفية.",
+    "category": "تطوير الويب",
+    "difficulty": "مبتدئ إلى متقدم",
+    "popularity": "عالية جداً",
     "firstAppeared": "1995",
-    "paradigms": ["Multi-paradigm", "Event-driven", "Functional", "Object-oriented"]
+    "paradigms": ["متعدد النماذج", "معتمد على الأحداث", "وظيفي", "موجه نحو الكائنات"]
   },
   {
     "id": "python",
     "title": "Python",
-    "description": "A powerful, easy-to-learn programming language with extensive libraries and applications.",
-    "content": "Python is a high-level, interpreted programming language known for its simplicity and readability. It emphasizes code readability with its notable use of significant whitespace and clear syntax.\n\nPython supports multiple programming paradigms including procedural, object-oriented, and functional programming. It has a comprehensive standard library and a vast ecosystem of third-party packages.\n\nCommon applications include web development (Django, Flask), data science (NumPy, Pandas), machine learning (TensorFlow, PyTorch), automation, and scientific computing.",
-    "category": "General Purpose",
-    "difficulty": "Beginner",
-    "popularity": "Very High",
+    "description": "لغة برمجة قوية وسهلة التعلم مع مكتبات وتطبيقات واسعة.",
+    "content": "Python هي لغة برمجة عالية المستوى ومُفسرة تُعرف ببساطتها وسهولة قراءتها. تؤكد على قابلية قراءة الكود مع استخدامها الملحوظ للمسافات البيضاء المهمة وبناء جملة واضح.\n\nتدعم Python نماذج البرمجة المتعددة بما في ذلك البرمجة الإجرائية، والموجهة نحو الكائنات، والوظيفية. ولها مكتبة قياسية شاملة وبيئة ضخمة من الحزم من طرف ثالث.\n\nتشمل التطبيقات الشائعة تطوير الويب (Django، Flask)، وعلوم البيانات (NumPy، Pandas)، وتعلم الآلة (TensorFlow، PyTorch)، والأتمتة، والحوسبة العلمية.",
+    "category": "لغة عامة الغرض",
+    "difficulty": "مبتدئ",
+    "popularity": "عالية جداً",
     "firstAppeared": "1991",
-    "paradigms": ["Multi-paradigm", "Object-oriented", "Procedural", "Functional"]
+    "paradigms": ["متعدد النماذج", "موجه نحو الكائنات", "إجرائي", "وظيفي"]
   },
   {
     "id": "typescript",
     "title": "TypeScript",
-    "description": "A typed superset of JavaScript that compiles to plain JavaScript, adding static type definitions.",
-    "content": "TypeScript is a programming language developed by Microsoft that builds on JavaScript by adding static type definitions. It helps catch errors early through a type system and makes JavaScript development more efficient.\n\nTypeScript code is transpiled to JavaScript, making it compatible with any browser, host, or operating system. It supports modern JavaScript features and adds powerful type checking capabilities.\n\nWidely adopted in large-scale applications, TypeScript improves code quality, developer productivity, and maintainability. It's particularly popular in React, Angular, and Node.js development.",
-    "category": "Web Development",
-    "difficulty": "Intermediate",
-    "popularity": "High",
+    "description": "مجموعة فرعية مُطبقة من JavaScript تُجمع إلى JavaScript عادي، مضيفة تعريفات الأنواع الثابتة.",
+    "content": "TypeScript هي لغة برمجة طورتها Microsoft وتُبنى على JavaScript بإضافة تعريفات الأنواع الثابتة. تساعد في اكتشاف الأخطاء مبكرًا من خلال نظام الأنواع وتجعل تطوير JavaScript أكثر كفاءة.\n\nيتم تحويل كود TypeScript إلى JavaScript، مما يجعله متوافقًا مع أي متصفح أو مضيف أو نظام تشغيل. يدعم ميزات JavaScript الحديثة ويضيف إمكانيات قوية لفحص الأنواع.\n\nتُعتمد على نطاق واسع في التطبيقات كبيرة الحجم، حيث يحسن TypeScript من جودة الكود وإنتاجية المطور وسهولة الصيانة. إنه شائع بشكل خاص في تطوير React وAngular وNode.js.",
+    "category": "تطوير الويب",
+    "difficulty": "متوسط",
+    "popularity": "عالية",
     "firstAppeared": "2012",
-    "paradigms": ["Multi-paradigm", "Object-oriented", "Functional"]
+    "paradigms": ["متعدد النماذج", "موجه نحو الكائنات", "وظيفي"]
   }
 ]

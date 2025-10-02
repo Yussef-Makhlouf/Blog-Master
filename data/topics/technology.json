@@ -1,24 +1,24 @@
 [
   {
     "id": "ai-development-trends-2024",
-    "title": "AI Development Trends Shaping 2024",
-    "excerpt": "Explore the latest artificial intelligence trends and their impact on software development.",
-    "content": "Artificial Intelligence continues to revolutionize software development in 2024. This article examines the most significant AI trends affecting developers and businesses worldwide.\n\nWe'll cover advances in large language models, AI-powered development tools, machine learning operations (MLOps), and the integration of AI into everyday applications. Learn how these trends are changing the development landscape.\n\nThe article includes practical insights on adopting AI technologies, ethical considerations, and predictions for the future of AI in development.",
+    "title": "اتجاهات تطوير الذكاء الاصطناعي التي تشكل عام 2024",
+    "excerpt": "استكشف أحدث اتجاهات الذكاء الاصطناعي وتأثيرها على تطوير البرمجيات.",
+    "content": "لا يزال الذكاء الاصطناعي يُحدث ثورة في تطوير البرمجيات في عام 2024. تتناول هذه المقالة أبرز اتجاهات الذكاء الاصطناعي التي تؤثر على المطورين والشركات في جميع أنحاء العالم.\n\nسنغطي التقدم في نماذج اللغة الكبيرة، وأدوات التطوير المدعومة بالذكاء الاصطناعي، وعمليات تعلم الآلة (MLOps)، وتكامل الذكاء الاصطناعي في التطبيقات اليومية. تعرف على كيفية تغيير هذه الاتجاهات لمشهد التطوير.\n\nتشمل المقالة رؤى عملية حول تبني تقنيات الذكاء الاصطناعي، والاعتبارات الأخلاقية، وتوقعات مستقبل الذكاء الاصطناعي في التطوير.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Dr. Amanda Foster",
+    "author": "الدكتورة أماندا فوستر",
     "publishedAt": "2024-01-20",
-    "readTime": "13 min read",
-    "tags": ["Artificial Intelligence", "Machine Learning", "Development Tools", "Future Tech"]
+    "readTime": "13 دقيقة قراءة",
+    "tags": ["الذكاء الاصطناعي", "تعلم الآلة", "أدوات التطوير", "التكنولوجيا المستقبلية"]
   },
   {
     "id": "edge-computing-explained",
-    "title": "Edge Computing: The Future of Distributed Systems",
-    "excerpt": "Understanding edge computing and its applications in modern distributed architectures.",
-    "content": "Edge computing is transforming how we think about data processing and application architecture. This comprehensive guide explains the concepts, benefits, and implementation strategies for edge computing.\n\nWe'll explore use cases across industries, compare edge computing with cloud computing, and discuss the technical challenges and solutions. Learn how edge computing enables faster response times and improved user experiences.\n\nThe article provides practical examples and guidance for implementing edge computing solutions in your applications.",
+    "title": "الحوسبة الطرفية: مستقبل الأنظمة الموزعة",
+    "excerpt": "فهم الحوسبة الطرفية وتطبيقاتها في البنية الموزعة الحديثة.",
+    "content": "تُحدث الحوسبة الطرفية ثورة في طريقة تفكيرنا في معالجة البيانات وبنية التطبيق. يشرح هذا الدليل الشامل مفاهيم الحوسبة الطرفية، وفوائدها، واستراتيجيات تنفيذها.\n\nسنستعرض حالات الاستخدام عبر الصناعات، ونقارن بين الحوسبة الطرفية والحاسبة السحابية، ونناقش التحديات التقنية والحلول. تعرف على كيفية تمكين الحوسبة الطرفية لأوقات استجابة أسرع وتجارب مستخدم محسّنة.\n\nتوفر المقالة أمثلة عملية وإرشادات لتنفيذ حلول الحوسبة الطرفية في تطبيقاتك.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Robert Chen",
+    "author": "روبرت تشين",
     "publishedAt": "2024-01-17",
-    "readTime": "11 min read",
-    "tags": ["Edge Computing", "Distributed Systems", "Cloud Computing", "Architecture"]
+    "readTime": "11 دقيقة قراءة",
+    "tags": ["الحوسبة الطرفية", "الأنظمة الموزعة", "الحوسبة السحابية", "البنية"]
   }
 ]

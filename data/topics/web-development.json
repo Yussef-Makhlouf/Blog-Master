@@ -1,35 +1,35 @@
 [
   {
     "id": "nextjs-14-features",
-    "title": "Next.js 14: New Features and Improvements",
-    "excerpt": "Explore the latest features in Next.js 14 including improved performance and developer experience.",
-    "content": "Next.js 14 brings significant improvements to the React framework, including enhanced performance optimizations, improved developer experience, and new features that make building modern web applications even more efficient. In this comprehensive guide, we'll explore all the new features and how they can benefit your projects.\n\nThe most notable improvements include faster build times, improved hot reload functionality, and enhanced server-side rendering capabilities. The new App Router has been further refined, making it easier to create complex routing structures while maintaining excellent performance.\n\nAdditionally, Next.js 14 introduces better TypeScript support, improved error handling, and enhanced debugging tools that make development more productive and enjoyable.",
+    "title": "Next.js 14: الميزات الجديدة والتحسينات",
+    "excerpt": "اكتشف أحدث الميزات في Next.js 14 بما في ذلك الأداء المحسّن وتجربة المطور.",
+    "content": "يجلب Next.js 14 تحسينات كبيرة على إطار عمل React، بما في ذلك تحسينات الأداء وتجربة المطور المحسّنة والميزات الجديدة التي تجعل بناء تطبيقات الويب الحديثة أكثر كفاءة. في هذا الدليل الشامل، سنستكشف جميع الميزات الجديدة وكيف يمكن أن تستفيد مشاريعك منها.\n\nتشمل التحسينات الأكثر أهمية أوقات بناء أسرع، ووظيفة إعادة التحميل السريع المحسّنة، وقدرات تقديم الخادم المحسّنة. تم تحسين موجه التطبيق الجديد بشكل أكبر، مما يسهل إنشاء هياكل توجيه معقدة مع الحفاظ على أداء ممتاز.\n\nبالإضافة إلى ذلك، يقدم Next.js 14 دعمًا أفضل لـ TypeScript، ومعالجة أخطاء محسّنة، وأدوات تصحيح أخطاء محسّنة تجعل التطوير أكثر إنتاجية ومتعة.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Sarah Johnson",
+    "author": "سارة جونسون",
     "publishedAt": "2024-01-15",
-    "readTime": "8 min read",
-    "tags": ["Next.js", "React", "Web Development", "JavaScript"]
+    "readTime": "8 دقائق قراءة",
+    "tags": ["Next.js", "React", "تطوير الويب", "JavaScript"]
   },
   {
     "id": "react-server-components",
-    "title": "Understanding React Server Components",
-    "excerpt": "A deep dive into React Server Components and how they're changing the way we build React applications.",
-    "content": "React Server Components represent a paradigm shift in how we think about React applications. By allowing components to run on the server, we can achieve better performance, reduced bundle sizes, and improved user experiences.\n\nThis article explores the core concepts behind Server Components, their benefits, and practical implementation strategies. We'll cover how they differ from traditional client components, when to use each type, and best practices for building hybrid applications.\n\nWe'll also examine real-world examples and performance benchmarks that demonstrate the significant improvements Server Components can bring to your applications.",
+    "title": "فهم مكونات خادم React",
+    "excerpt": "غوص عميق في مكونات خادم React وكيفية تغييرها لطريقة بناء تطبيقات React.",
+    "content": "تمثل مكونات خادم React تحولاً في كيفية تفكيرنا في تطبيقات React. من خلال السماح للمكونات بالتشغيل على الخادم، يمكننا تحقيق أداء أفضل، وحجم حزمة أصغر، وتجارب مستخدم محسّنة.\n\nتستكشف هذه المقالة المفاهيم الأساسية وراء المكونات الخادمية، وفوائدها، واستراتيجيات التنفيذ العملية. سنغطي كيفية اختلافها عن المكونات العميلية التقليدية، ومتى تستخدم كل نوع، وأفضل الممارسات لبناء تطبيقات هجينة.\n\nسنفحص أيضًا أمثلة من العالم الحقيقي ومقاييس الأداء التي تُظهر التحسينات الكبيرة التي يمكن أن تجلبها مكونات الخادم لتطبيقاتك.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Mike Chen",
+    "author": "مايك تشين",
     "publishedAt": "2024-01-12",
-    "readTime": "12 min read",
-    "tags": ["React", "Server Components", "Performance", "Architecture"]
+    "readTime": "12 دقيقة قراءة",
+    "tags": ["React", "مكونات الخادم", "الأداء", "البنية"]
   },
   {
     "id": "tailwind-css-best-practices",
-    "title": "Tailwind CSS Best Practices for Large Projects",
-    "excerpt": "Learn how to effectively use Tailwind CSS in large-scale projects with proper organization and optimization.",
-    "content": "Tailwind CSS has revolutionized how we approach styling in modern web development. However, managing Tailwind in large projects requires careful planning and organization to maintain code quality and developer productivity.\n\nThis comprehensive guide covers best practices for organizing Tailwind classes, creating reusable components, optimizing for production, and maintaining consistency across large teams. We'll explore advanced techniques like custom utilities, component extraction, and design system integration.\n\nYou'll learn how to structure your Tailwind configuration, implement effective naming conventions, and leverage tools that make working with Tailwind at scale more manageable.",
+    "title": "أفضل ممارسات Tailwind CSS للمشاريع الكبيرة",
+    "excerpt": "تعلم كيفية استخدام Tailwind CSS بفعالية في المشاريع واسعة النطاق مع التنظيم المناسب والتحسين.",
+    "content": "لقد ثَوّرت Tailwind CSS الطريقة التي نتعامل بها مع التصميم في تطوير الويب الحديث. ومع ذلك، يتطلب إدارة Tailwind في المشاريع الكبيرة تخطيطًا وتنظيمًا دقيقًا للحفاظ على جودة الكود وإنتاجية المطور.\n\nيغطي هذا الدليل الشامل أفضل الممارسات لتنظيم فئات Tailwind، وإنشاء مكونات قابلة لإعادة الاستخدام، والتحسين للإنتاج، والحفاظ على الاتساق عبر الفرق الكبيرة. سنستكشف تقنيات متقدمة مثل الأدوات المخصصة، واستخراج المكونات، وتكامل نظام التصميم.\n\nستتعلم كيفية هيكلة تكوين Tailwind الخاص بك، وتنفيذ اصطلاحات تسمية فعالة، والاستفادة من الأدوات التي تجعل العمل مع Tailwind في نطاق واسع أكثر قابلية للإدارة.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Emily Rodriguez",
+    "author": "إميلي رودريغيز",
     "publishedAt": "2024-01-10",
-    "readTime": "10 min read",
-    "tags": ["Tailwind CSS", "CSS", "Best Practices", "Scalability"]
+    "readTime": "10 دقائق قراءة",
+    "tags": ["Tailwind CSS", "CSS", "أفضل الممارسات", "قابلية التوسع"]
   }
 ]

@@ -39,7 +39,7 @@ This document explains the improvements made to the card components to ensure im
 ### ServiceCard
 - Three variants (default, horizontal, featured)
 - Enhanced feature list with better icons
-- Improved pricing badge visibility
+- Improved availability badge visibility
 - Better button styling with appropriate sizing
 
 ### EncyclopediaCard

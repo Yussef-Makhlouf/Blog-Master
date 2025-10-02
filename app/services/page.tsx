@@ -10,14 +10,14 @@ import Banner from "@/components/banner"
 import { getServices } from "@/lib/data"
 
 export const metadata: Metadata = {
-  title: "Professional Services | Expert Solutions for Your Business",
+  title: "خدمات نقل العفش، النظافة، الأمان، وتكييف الهواء | خدمات الخليج",
   description:
-    "Discover our comprehensive range of professional services including web development, mobile apps, UI/UX design, digital marketing, and technology consulting.",
-  keywords: ["services", "web development", "mobile development", "UI/UX design", "digital marketing", "consulting"],
+    "نقدم خدمات نقل العفش المتخصصة، وخدمات النظافة الشاملة، وتركيب وصيانة الكاميرات وأنظمة الأمان، وتوريد وصيانة المكيفات في جميع أنحاء المملكة العربية السعودية.",
+  keywords: ["خدمات نقل العفش", "خدمات النظافة", "أنظمة الأمان", "تكييف الهواء", "السعودية"],
   openGraph: {
-    title: "Professional Services | Expert Solutions for Your Business",
+    title: "خدمات نقل العفش، النظافة، الأمان، وتكييف الهواء | خدمات الخليج",
     description:
-      "Discover our comprehensive range of professional services including web development, mobile apps, UI/UX design, digital marketing, and technology consulting.",
+      "نقدم خدمات نقل العفش المتخصصة، وخدمات النظافة الشاملة، وتركيب وصيانة الكاميرات وأنظمة الأمان، وتوريد وصيانة المكيفات في جميع أنحاء المملكة العربية السعودية.",
     type: "website",
   },
 }
@@ -28,9 +28,10 @@ export default async function ServicesPage() {
   // Group services by category for the sub-hero navigation
   const serviceCategories: { id: string; title: string; color: "primary" | "secondary" | "accent" | "muted" }[] = [
     { id: "all", title: "جميع الخدمات", color: "primary" },
-    { id: "development", title: "التطوير", color: "secondary" },
-    { id: "design", title: "التصميم", color: "accent" },
-    { id: "consulting", title: "الاستشارات", color: "muted" },
+    { id: "furniture-moving", title: "نقل العفش", color: "secondary" },
+    { id: "cleaning-services", title: "النظافة", color: "accent" },
+    { id: "security-systems", title: "أنظمة الأمان", color: "muted" },
+    { id: "ac-services", title: "تكييف الهواء", color: "primary" },
   ]
 
   return (
@@ -40,7 +41,7 @@ export default async function ServicesPage() {
       <main>
         <PageHeader
           title="الخدمات الاحترافية"
-          description="نقدم حلولاً شاملة مصممة لمساعدة عملك على النمو والنجاح في المشهد الرقمي التنافسي اليوم."
+          description="كل تلك الخدمات في جميع أنحاء المملكة العربية السعودية. نقدم حلولاً شاملة مصممة لراحتكم وسلامتكم."
         >
           <Breadcrumb items={[{ label: "Services" }]} className="justify-center" />
         </PageHeader>
@@ -50,7 +51,7 @@ export default async function ServicesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Banner
               title="عروض حصرية هذا الأسبوع"
-              description="احصل على خصومات تصل إلى 15% على خدمات التطوير والتصميم هذا الأسبوع فقط."
+              description="احصل على خصومات تصل إلى 25% على خدمات نقل العفش وتكييف الهواء في جميع أنحاء المملكة هذا الأسبوع فقط."
               image="/weekly-offer-banner.jpg"
               cta={{
                 text: "عرض العروض",
@@ -71,8 +72,10 @@ export default async function ServicesPage() {
                 description={services[0].description}
                 image={services[0].image}
                 features={services[0].features}
-                price={services[0].price}
                 duration={services[0].duration}
+                availability={services[0].availability}
+                support={services[0].support}
+                emergency={services[0].emergency}
                 variant="featured"
                 className="mb-8 sm:mb-12"
               />
@@ -85,8 +88,10 @@ export default async function ServicesPage() {
                     description={service.description}
                     image={service.image}
                     features={service.features}
-                    price={service.price}
                     duration={service.duration}
+                    availability={service.availability}
+                    support={service.support}
+                    emergency={service.emergency}
                     variant="horizontal"
                   />
                 ))}
@@ -100,7 +105,7 @@ export default async function ServicesPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Banner
               title="هل تحتاج إلى خدمة مخصصة؟"
-              description="نقدم حلولاً مخصصة حسب احتياجات عملك. تواصل معنا لمناقشة متطلباتك."
+              description="نقدم حلولاً مخصصة حسب احتياجاتكم في جميع أنحاء المملكة العربية السعودية. تواصل معنا لمناقشة متطلباتكم."
               cta={{
                 text: "تواصل معنا",
                 href: "/contact",
@@ -114,10 +119,10 @@ export default async function ServicesPage() {
         {/* CTA Section */}
         <section className="py-16 sm:py-20 bg-muted/30">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-balance mb-4 sm:mb-6">هل تحتاج إلى حل مخصص؟</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-balance mb-4 sm:mb-6">خدمات تليق بمكانكم</h2>
             <p className="text-base sm:text-lg text-muted-foreground text-pretty mb-6 sm:mb-8 leading-relaxed">
-              هل تبحث عن شيء لم تجده؟ نحن متخصصون في إنشاء حلول مخصصة تتناسب مع
-              احتياجات ومتطلبات عملك الخاصة.
+              في خدمات الخليج، نقدم محتوى وخدمات تليق بهذا المستوى من التميز. 
+              نحن متخصصون في تقديم خدمات نقل العفش، والنظافة، والكاميرات وأنظمة الأمان، وتكييف الهواء في جميع أنحاء المملكة العربية السعودية.
             </p>
             <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center">
               <a

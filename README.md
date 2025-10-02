@@ -100,8 +100,8 @@ Edit `data/services.json` to add or modify services:
   "fullDescription": "Detailed description for service page",
   "image": "/placeholder.svg?height=300&width=400",
   "features": ["Feature 1", "Feature 2"],
-  "price": "Starting at $X",
-  "duration": "X weeks"
+  "duration": "X weeks",
+  "availability": "Available upon request"
 }
 \`\`\`
 

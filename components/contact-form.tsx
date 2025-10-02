@@ -81,16 +81,14 @@ export default function ContactForm() {
             <Label htmlFor="service">الخدمة المطلوبة</Label>
             <select
               id="service"
-              name="service"
-              className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm text-right"
+              className="w-full px-4 py-3 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-primary transition-colors"
+              required
             >
               <option value="">اختر الخدمة</option>
-              <option value="web-development">تطوير المواقع الإلكترونية</option>
-              <option value="mobile-development">تطوير التطبيقات المحمولة</option>
-              <option value="ui-ux-design">تصميم واجهة وتجربة المستخدم</option>
-              <option value="digital-marketing">التسويق الرقمي</option>
-              <option value="cloud-solutions">الحلول السحابية</option>
-              <option value="consulting">الاستشارات التقنية</option>
+              <option value="furniture-moving">خدمات نقل العفش</option>
+              <option value="cleaning-services">خدمات النظافة</option>
+              <option value="security-systems">الكاميرات وأنظمة الأمان</option>
+              <option value="ac-services">المكيفات: تركيب، صيانة، وتوريد</option>
             </select>
           </div>
 

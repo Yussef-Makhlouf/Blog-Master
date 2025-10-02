@@ -15,7 +15,7 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
   return (
     <nav className={`flex items-center space-x-2 text-sm text-muted-foreground ${className}`}>
       <Link href="/" className="flex items-center hover:text-primary transition-colors">
-        <Home className="h-4 w-4" />
+        <Home className="h-4 w-4 text-primary-foreground " />
       </Link>
 
       {items.map((item, index) => (

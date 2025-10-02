@@ -1,50 +1,34 @@
 [
   {
     "id": "furniture-moving",
-    "title": "نقل العفش",
-    "description": "نصائح وإرشادات متخصصة في نقل العفش والأثاث بأمان.",
+    "title": "خدمات نقل العفش",
+    "description": "نصائح وإرشادات متخصصة في نقل العفش والأثاث بأمان في جميع أنحاء المملكة.",
     "image": "/placeholder.svg?height=250&width=350",
-    "articleCount": 12,
+    "articleCount": 15,
     "lastUpdated": "2024-01-22"
   },
   {
     "id": "cleaning-services",
     "title": "خدمات النظافة",
-    "description": "أفضل الطرق والتقنيات في خدمات النظافة المتخصصة.",
+    "description": "أفضل الطرق والتقنيات في خدمات النظافة المتخصصة للمنازل والشركات في جميع أنحاء المملكة.",
     "image": "/placeholder.svg?height=250&width=350",
-    "articleCount": 15,
+    "articleCount": 18,
     "lastUpdated": "2024-01-20"
   },
   {
-    "id": "ac-maintenance",
-    "title": "صيانة المكيفات",
-    "description": "دليل شامل لصيانة وتركيب أنظمة التبريد.",
+    "id": "security-systems",
+    "title": "الكاميرات وأنظمة الأمان",
+    "description": "مقالات متخصصة في أنظمة الأمان والمراقبة في جميع أنحاء المملكة.",
     "image": "/placeholder.svg?height=250&width=350",
-    "articleCount": 10,
-    "lastUpdated": "2024-01-18"
-  },
-  {
-    "id": "security-safety",
-    "title": "الأمن والسلامة",
-    "description": "مقالات متخصصة في أنظمة الأمن وبروتوكولات السلامة.",
-    "image": "/placeholder.svg?height=250&width=350",
-    "articleCount": 8,
+    "articleCount": 12,
     "lastUpdated": "2024-01-19"
   },
   {
-    "id": "camera-systems",
-    "title": "أنظمة المراقبة",
-    "description": "مقالات حول تركيب وضبط أنظمة المراقبة والكاميرات.",
+    "id": "ac-services",
+    "title": "المكيفات: تركيب، صيانة، وتوريد",
+    "description": "مقالات متخصصة في تركيب وصيانة وتوريد أنظمة التبريد في جميع أنحاء المملكة.",
     "image": "/placeholder.svg?height=250&width=350",
-    "articleCount": 14,
-    "lastUpdated": "2024-01-17"
-  },
-  {
-    "id": "shipping-logistics",
-    "title": "الشحن واللوجستيات",
-    "description": "معلومات ومقالات حول خدمات الشحن المحلي والدولي.",
-    "image": "/placeholder.svg?height=250&width=350",
-    "articleCount": 16,
-    "lastUpdated": "2024-01-21"
+    "articleCount": 10,
+    "lastUpdated": "2024-01-18"
   }
 ]

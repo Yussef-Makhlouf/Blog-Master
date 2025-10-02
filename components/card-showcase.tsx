@@ -43,8 +43,10 @@ export default function CardShowcase({
             description={card.description}
             image={card.image}
             features={card.features}
-            price={card.price}
             duration={card.duration}
+            availability={card.availability}
+            support={card.support}
+            emergency={card.emergency}
             variant={index === 0 && variant === "featured" ? "featured" : 
                    index % 3 === 1 ? "horizontal" : "default"}
           />

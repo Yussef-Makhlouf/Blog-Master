@@ -1,24 +1,24 @@
 [
   {
     "id": "nextjs-fullstack-tutorial",
-    "title": "Building a Full-Stack App with Next.js 14",
-    "excerpt": "Step-by-step tutorial for creating a complete web application using Next.js 14 and modern tools.",
-    "content": "This comprehensive tutorial walks you through building a full-stack web application using Next.js 14, including authentication, database integration, and deployment.\n\nWe'll cover project setup, database design, API routes, authentication implementation, and frontend development. Each step includes detailed explanations and code examples.\n\nBy the end of this tutorial, you'll have a complete understanding of modern full-stack development with Next.js and be able to build production-ready applications.",
+    "title": "بناء تطبيق كامل المكدس مع Next.js 14",
+    "excerpt": "برنامج تعليمي خطوة بخطوة لإنشاء تطبيق ويب كامل باستخدام Next.js 14 والأدوات الحديثة.",
+    "content": "يوجهك هذا البرنامج التعليمي الشامل خلال بناء تطبيق ويب كامل المكدس باستخدام Next.js 14، بما في ذلك المصادقة، وتكامل قاعدة البيانات، والنشر.\n\nسنغطي إعداد المشروع، وتصميم قاعدة البيانات، ومسارات واجهة برمجة التطبيقات، وتنفيذ المصادقة، وتطوير الواجهة الأمامية. تتضمن كل خطوة شرحًا مفصلًا وأمثلة على التعليمات البرمجية.\n\nبنهاية هذا البرنامج التعليمي، سيكون لديك فهم كامل لتطوير المكدس الكامل الحديث مع Next.js وستتمكن من إنشاء تطبيقات جاهزة للإنتاج.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Tom Wilson",
+    "author": "توم ويلسون",
     "publishedAt": "2024-01-22",
-    "readTime": "25 min read",
-    "tags": ["Next.js", "Full-Stack", "Tutorial", "Web Development"]
+    "readTime": "25 دقيقة قراءة",
+    "tags": ["Next.js", "كامل المكدس", "برنامج تعليمي", "تطوير الويب"]
   },
   {
     "id": "tailwind-components-guide",
-    "title": "Creating Reusable Components with Tailwind CSS",
-    "excerpt": "Learn how to build a component library using Tailwind CSS and modern React patterns.",
-    "content": "Building reusable components is essential for maintaining consistency and efficiency in your projects. This tutorial shows you how to create a comprehensive component library using Tailwind CSS.\n\nWe'll cover component architecture, styling patterns, TypeScript integration, and documentation strategies. Learn how to build components that are both flexible and maintainable.\n\nThe tutorial includes practical examples and a complete component library that you can use as a starting point for your own projects.",
+    "title": "إنشاء مكونات قابلة لإعادة الاستخدام مع Tailwind CSS",
+    "excerpt": "تعلم كيفية إنشاء مكتبة مكونات باستخدام Tailwind CSS وأنماط React الحديثة.",
+    "content": "بناء المكونات القابلة لإعادة الاستخدام أمر ضروري للحفاظ على الاتساق والكفاءة في مشاريعك. يوضح لك هذا البرنامج التعليمي كيفية إنشاء مكتبة مكونات شاملة باستخدام Tailwind CSS.\n\nسنغطي بنية المكونات، وأنماط التصميم، وتكامل TypeScript، واستراتيجيات التوثيق. تعرف على كيفية إنشاء مكونات مرنة وقابلة للصيانة.\n\nيتضمن البرنامج التعليمي أمثلة عملية ومكتبة مكونات كاملة يمكنك استخدامها كنقطة بداية لمشاريعك الخاصة.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Jessica Lee",
+    "author": "جيسيكا لي",
     "publishedAt": "2024-01-19",
-    "readTime": "18 min read",
-    "tags": ["Tailwind CSS", "React", "Component Library", "Tutorial"]
+    "readTime": "18 دقيقة قراءة",
+    "tags": ["Tailwind CSS", "React", "مكتبة المكونات", "برنامج تعليمي"]
   }
 ]

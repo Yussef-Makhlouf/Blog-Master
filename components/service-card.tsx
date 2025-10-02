@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle, Clock } from "lucide-react"
 import ImageWithFallback from "@/components/image-with-fallback"
 
 interface ServiceCardProps {
@@ -11,8 +11,10 @@ interface ServiceCardProps {
   description: string
   image: string
   features: string[]
-  price: string
   duration: string
+  availability?: string
+  support?: string
+  emergency?: string
   className?: string
   variant?: "default" | "horizontal" | "featured"
 }
@@ -23,11 +25,16 @@ export default function ServiceCard({
   description,
   image,
   features,
-  price,
   duration,
+  availability,
+  support,
+  emergency,
   className,
   variant = "default",
 }: ServiceCardProps) {
+  // Determine which additional info to show
+  const additionalInfo = availability || support || emergency || "متوفر حسب الطلب";
+
   if (variant === "horizontal") {
     return (
       <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
@@ -50,7 +57,8 @@ export default function ServiceCard({
                   {title}
                 </CardTitle>
                 <Badge className="text-base px-2 py-1">
-                  {price}
+                  <Clock className="h-4 w-4 ml-1" />
+                  {additionalInfo}
                 </Badge>
               </div>
               <CardDescription className="text-sm line-clamp-2">
@@ -96,7 +104,8 @@ export default function ServiceCard({
             className="object-cover"
           />
           <Badge className="absolute top-3 right-3 text-lg px-3 py-1.5">
-            {price}
+            <Clock className="h-4 w-4 ml-1" />
+            {additionalInfo}
           </Badge>
         </div>
         
@@ -146,7 +155,8 @@ export default function ServiceCard({
           className="object-cover"
         />
         <Badge className="absolute top-2 right-2 text-sm px-2 py-1">
-          {price}
+          <Clock className="h-3 w-3 ml-1" />
+          {additionalInfo}
         </Badge>
       </div>
 

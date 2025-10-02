@@ -1,13 +1,13 @@
 [
   {
     "id": "digital-transformation-strategy",
-    "title": "Building a Successful Digital Transformation Strategy",
-    "excerpt": "A comprehensive guide to planning and executing digital transformation initiatives.",
-    "content": "Digital transformation is essential for businesses to remain competitive in today's market. This article provides a roadmap for developing and implementing successful digital transformation strategies.\n\nWe'll cover assessment methodologies, technology selection criteria, change management processes, and success metrics. Learn from real-world case studies and avoid common pitfalls.\n\nThe guide includes practical frameworks, implementation timelines, and strategies for overcoming organizational resistance to change.",
+    "title": "بناء استراتيجية تحول رقمي ناجحة",
+    "excerpt": "دليل شامل لتخطيط وتنفيذ مبادرات التحول الرقمي.",
+    "content": "التحول الرقمي ضروري للشركات للبقاء تنافسية في السوق اليوم. توفر هذه المقالة خارطة طريق لتطوير وتنفيذ استراتيجيات التحول الرقمي الناجحة.\n\nسنغطي منهجيات التقييم، ومعايير اختيار التكنولوجيا، وعمليات إدارة التغيير، ومقاييس النجاح. تعلم من دراسات الحالة من العالم الحقيقي وتجنب الأخطاء الشائعة.\n\nيشمل الدليل أطر عملية، وجدولة التنفيذ، واستراتيجيات للتغلب على مقاومة المؤسسة للتغيير.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Maria Gonzalez",
+    "author": "ماريا غونزاليس",
     "publishedAt": "2024-01-14",
-    "readTime": "12 min read",
-    "tags": ["Digital Transformation", "Business Strategy", "Change Management", "Technology"]
+    "readTime": "12 دقيقة قراءة",
+    "tags": ["التحول الرقمي", "استراتيجية الأعمال", "إدارة التغيير", "التكنولوجيا"]
   }
 ]

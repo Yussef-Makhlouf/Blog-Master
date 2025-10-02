@@ -1,24 +1,24 @@
 [
   {
     "id": "react-native-performance",
-    "title": "Optimizing React Native Performance",
-    "excerpt": "Essential techniques for building high-performance React Native applications.",
-    "content": "Performance optimization is crucial for creating smooth and responsive React Native applications. This comprehensive guide covers the most effective techniques for improving your app's performance.\n\nWe'll explore memory management, rendering optimization, navigation performance, and bundle size reduction strategies. Learn how to identify performance bottlenecks and implement solutions that make a real difference.\n\nThe article includes practical examples, performance monitoring tools, and best practices used by top mobile development teams.",
+    "title": "تحسين أداء React Native",
+    "excerpt": "تقنيات أساسية لبناء تطبيقات React Native عالية الأداء.",
+    "content": "يعد تحسين الأداء أمرًا بالغ الأهمية لإنشاء تطبيقات React Native سلسة وسريعة الاستجابة. يغطي هذا الدليل الشامل أفعال التقنيات الأكثر فعالية لتحسين أداء تطبيقك.\n\nسنستكشف إدارة الذاكرة، وتحسين العرض، وأداء التنقل، واستراتيجيات تقليل حجم الحزمة. تعلم كيفية تحديد أعناق الزجاج في الأداء وتنفيذ الحلول التي تحدث فرقًا حقيقيًا.\n\nتشمل المقالة أمثلة عملية، وأدوات مراقبة الأداء، وأفضل الممارسات المستخدمة من قبل أفضل فرق تطوير мобильية.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "David Park",
+    "author": "ديفيد بارك",
     "publishedAt": "2024-01-12",
-    "readTime": "14 min read",
-    "tags": ["React Native", "Performance", "Mobile Development", "Optimization"]
+    "readTime": "14 دقيقة قراءة",
+    "tags": ["React Native", "الأداء", "تطوير الهاتف المحمول", "التحسين"]
   },
   {
     "id": "flutter-vs-react-native",
-    "title": "Flutter vs React Native: A Comprehensive Comparison",
-    "excerpt": "An in-depth comparison of Flutter and React Native for cross-platform mobile development.",
-    "content": "Choosing between Flutter and React Native can be challenging. This detailed comparison examines both frameworks across multiple dimensions including performance, development experience, ecosystem, and long-term viability.\n\nWe'll analyze real-world case studies, performance benchmarks, and developer productivity metrics to help you make an informed decision for your next mobile project.\n\nThe article provides practical guidance on when to choose each framework and migration strategies if you need to switch.",
+    "title": "Flutter مقابل React Native: مقارنة شاملة",
+    "excerpt": "مقارنة متعمقة بين Flutter و React Native لتطوير الهاتف المحمول عبر الأنظمة الأساسية.",
+    "content": "يمكن أن يكون الاختيار بين Flutter و React Native أمرًا محفوفًا بالتحديات. تحلل هذه المقارنة المفصلة كلا الإطارين عبر أبعاد متعددة بما في ذلك الأداء، وتجربة التطوير، والنظام البيئي، والاستدامة على المدى الطويل.\n\nسنحلل دراسات حالة من العالم الحقيقي، ومقاييس الأداء، ومقاييس إنتاجية المطور للمساعدة في اتخاذ قرار مدروس لمشروعك التالي على الهاتف المحمول.\n\nتوفر المقالة إرشادات عملية حول متى تختار كل إطار عمل واستراتيجيات الترحيل إذا كنت بحاجة إلى التبديل.",
     "image": "/placeholder.svg?height=400&width=600",
-    "author": "Lisa Wang",
+    "author": "ليزا وانغ",
     "publishedAt": "2024-01-08",
-    "readTime": "16 min read",
-    "tags": ["Flutter", "React Native", "Cross-platform", "Mobile Development"]
+    "readTime": "16 دقيقة قراءة",
+    "tags": ["Flutter", "React Native", "عبر الأنظمة الأساسية", "تطوير الهاتف المحمول"]
   }
 ]

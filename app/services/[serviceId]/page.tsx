@@ -52,6 +52,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
     notFound()
   }
 
+  // Determine which additional info to show based on service
+  const additionalInfo = service.availability || service.support || service.emergency || service.duration;
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -68,24 +71,40 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <p className="text-xl text-muted-foreground text-pretty leading-relaxed mb-8">{service.description}</p>
 
                 <div className="flex flex-wrap gap-4 mb-8">
-                  <Badge variant="secondary" className="text-sm px-3 py-1">
-                    <DollarSign className="h-4 w-4 mr-1" />
-                    {service.price}
-                  </Badge>
-                  <Badge variant="secondary" className="text-sm px-3 py-1">
-                    <Clock className="h-4 w-4 mr-1" />
-                    {service.duration}
-                  </Badge>
+                  {service.duration && (
+                    <Badge variant="secondary" className="text-sm px-3 py-1">
+                      <Clock className="h-4 w-4 mr-1" />
+                      {service.duration}
+                    </Badge>
+                  )}
+                  {service.availability && (
+                    <Badge variant="secondary" className="text-sm px-3 py-1">
+                      <CheckCircle className="h-4 w-4 mr-1" />
+                      {service.availability}
+                    </Badge>
+                  )}
+                  {service.support && (
+                    <Badge variant="secondary" className="text-sm px-3 py-1">
+                      <CheckCircle className="h-4 w-4 mr-1" />
+                      {service.support}
+                    </Badge>
+                  )}
+                  {service.emergency && (
+                    <Badge variant="secondary" className="text-sm px-3 py-1">
+                      <CheckCircle className="h-4 w-4 mr-1" />
+                      {service.emergency}
+                    </Badge>
+                  )}
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg">
                     <Mail className="h-5 w-5 mr-2" />
-                    Get Quote
+                    اتصل بنا
                   </Button>
                   <Button variant="outline" size="lg">
                     <Phone className="h-5 w-5 mr-2" />
-                    Call Us
+                    ارسل رسالة
                   </Button>
                 </div>
               </div>
@@ -110,12 +129,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
               {/* Main Content */}
               <div className="lg:col-span-2">
                 <div className="prose prose-lg max-w-none">
-                  <h2 className="text-3xl font-bold mb-6">Service Overview</h2>
+                  <h2 className="text-3xl font-bold mb-6">تفاصيل الخدمة</h2>
                   <p className="text-muted-foreground leading-relaxed">{service.fullDescription}</p>
                 </div>
 
                 <div className="mt-12">
-                  <h3 className="text-2xl font-bold mb-6">What's Included</h3>
+                  <h3 className="text-2xl font-bold mb-6">ما يتضمنه الخدمة</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {service.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-3">
@@ -131,40 +150,44 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <div className="space-y-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Service Details</CardTitle>
+                    <CardTitle>تفاصيل الخدمة</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
+                    {service.duration && (
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">المدة الزمنية</span>
+                        <span className="font-semibold">{service.duration}</span>
+                      </div>
+                    )}
+                    {additionalInfo && (
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">معلومات إضافية</span>
+                        <span className="font-semibold">{additionalInfo}</span>
+                      </div>
+                    )}
                     <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">Starting Price</span>
-                      <span className="font-semibold">{service.price}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">Duration</span>
-                      <span className="font-semibold">{service.duration}</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">Features</span>
-                      <span className="font-semibold">{service.features.length} included</span>
+                      <span className="text-muted-foreground">الميزات</span>
+                      <span className="font-semibold">{service.features.length} ميزات</span>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Ready to Get Started?</CardTitle>
+                    <CardTitle>هل أنت مستعد للبدء؟</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Contact us today to discuss your project requirements and get a personalized quote.
+                      تواصل معنا اليوم لمناقشة متطلباتك والحصول على خدمة مخصصة تناسب احتياجاتك.
                     </p>
                     <div className="space-y-2">
                       <Button className="w-full">
                         <Mail className="h-4 w-4 mr-2" />
-                        Send Message
+                        أرسل رسالة
                       </Button>
                       <Button variant="outline" className="w-full bg-transparent">
                         <Phone className="h-4 w-4 mr-2" />
-                        Schedule Call
+                        اتصل بنا
                       </Button>
                     </div>
                   </CardContent>
