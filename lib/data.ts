@@ -78,3 +78,21 @@ export async function getCompany(id: string) {
 export async function getCompaniesByService(serviceId: string) {
   return companiesData.filter((company) => company.services.includes(serviceId))
 }
+
+// Add this new function to get promotional banner data for a company
+export async function getCompanyPromotionalData(companyId: string) {
+  const companies = await getCompanies()
+  const company = companies.find(c => c.id === companyId)
+  
+  if (company && company.promotional) {
+    return {
+      title: company.promotional.bannerTitle,
+      description: company.promotional.bannerDescription,
+      ctaText: company.promotional.bannerCtaText,
+      encyclopediaLink: company.promotional.encyclopediaLink,
+      encyclopediaText: company.promotional.encyclopediaText
+    }
+  }
+  
+  return null
+}

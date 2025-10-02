@@ -28,6 +28,9 @@ export default function ArticleCard({
   tags,
   className,
 }: ArticleCardProps) {
+  // Check if href is valid
+  const isValidHref = href && href !== "#";
+  
   return (
     <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
       {/* Image section - always on top */}
@@ -51,9 +54,13 @@ export default function ArticleCard({
         </div>
         
         <h3 className="text-base md:text-lg font-semibold leading-tight mb-2">
-          <Link href={href} className="hover:text-primary transition-colors">
-            {title}
-          </Link>
+          {isValidHref ? (
+            <Link href={href} className="hover:text-primary transition-colors">
+              {title}
+            </Link>
+          ) : (
+            <span>{title}</span>
+          )}
         </h3>
       </CardHeader>
 

@@ -28,7 +28,7 @@ export default function CardShowcase({
             title={card.title}
             description={card.description}
             image={card.image}
-            href={card.href}
+            href={card.href || "#"}
             badge={card.badge}
             variant={index === 0 && variant === "featured" ? "overlay" : 
                    index % 3 === 1 ? "minimal" : "default"}
@@ -72,7 +72,7 @@ export default function CardShowcase({
             title={card.title}
             excerpt={card.excerpt}
             image={card.image}
-            href={card.href}
+            href={card.href || "#"}
             author={card.author}
             publishedAt={card.publishedAt}
             readTime={card.readTime}

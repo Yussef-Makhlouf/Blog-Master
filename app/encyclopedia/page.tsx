@@ -54,19 +54,22 @@ export default async function EncyclopediaPage() {
           <Breadcrumb items={[{ label: "Encyclopedia" }]} className="justify-center" />
         </PageHeader>
 
-        {/* Banner after header */}
+        {/* Promotional Banner for Blog/Website Services */}
         <div className="py-6 sm:py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Banner
-              title="مقالات جديدة تمت إضافتها"
-              description="تمت إضافة 25 مقالاً جديداً هذا الشهر في فئات البرمجة والتكنولوجيا."
-              image="/new-encyclopedia-articles.jpg"
+              title="موسوعتنا تنمو يومياً!"
+              description="نقوم بإضافة مقالات جديدة أسبوعياً لتزويدك بأحدث المعلومات والنصائح في مختلف المجالات"
+              image="/encyclopedia-promo.jpg"
               cta={{
                 text: "تصفح المقالات الجديدة",
                 href: "#new",
                 variant: "secondary"
               }}
-              variant="default"
+              variant="promotional"
+              backgroundType="gradient"
+              backgroundColor="green"
+              textColor="foreground"
             />
           </div>
         </div>
@@ -106,18 +109,21 @@ export default async function EncyclopediaPage() {
           </div>
         </section>
 
-        {/* Banner before search */}
+        {/* Promotional Banner for Company Services */}
         <div className="py-8 sm:py-10 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Banner
-              title="هل تبحث عن معلومة محددة؟"
-              description="استخدم ميزة البحث لدينا للعثور بسرعة على المعلومات التي تحتاجها."
+              title="هل تحتاج إلى خدمة محددة؟"
+              description="تواصل مع أفضل الشركات في المملكة التي تقدم خدمات متنوعة"
               cta={{
-                text: "ابحث الآن",
-                href: "#search",
+                text: "تصفح دليل الشركات",
+                href: "/companies",
                 variant: "outline"
               }}
               variant="compact"
+              backgroundType="gradient"
+              backgroundColor="orange"
+              textColor="foreground"
             />
           </div>
         </div>

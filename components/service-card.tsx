@@ -34,6 +34,9 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   // Determine which additional info to show
   const additionalInfo = availability || support || emergency || "متوفر حسب الطلب";
+  
+  // Ensure features is an array before using slice
+  const safeFeatures = Array.isArray(features) ? features : [];
 
   if (variant === "horizontal") {
     return (
@@ -68,7 +71,7 @@ export default function ServiceCard({
             
             <CardContent className="p-0 flex-grow">
               <ul className="space-y-2 mb-4">
-                {features.slice(0, 2).map((feature, index) => (
+                {safeFeatures.slice(0, 2).map((feature, index) => (
                   <li key={index} className="flex items-start text-sm">
                     <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
                     <span>{feature}</span>
@@ -121,7 +124,7 @@ export default function ServiceCard({
         
         <CardContent className="pt-0 px-4 pb-4">
           <ul className="space-y-2 mb-5">
-            {features.slice(0, 4).map((feature, index) => (
+            {safeFeatures.slice(0, 4).map((feature, index) => (
               <li key={index} className="flex items-start text-base">
                 <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
                 <span>{feature}</span>
@@ -172,7 +175,7 @@ export default function ServiceCard({
 
       <CardContent className="pt-0 px-4 pb-4">
         <ul className="space-y-2 mb-4">
-          {features.slice(0, 3).map((feature, index) => (
+          {safeFeatures.slice(0, 3).map((feature, index) => (
             <li key={index} className="flex items-start text-sm">
               <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
               <span>{feature}</span>

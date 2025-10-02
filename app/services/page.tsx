@@ -46,7 +46,7 @@ export default async function ServicesPage() {
           <Breadcrumb items={[{ label: "Services" }]} className="justify-center" />
         </PageHeader>
 
-        {/* Banner after header */}
+        {/* Promotional Banner for Special Offers */}
         <div className="py-6 sm:py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Banner
@@ -58,7 +58,10 @@ export default async function ServicesPage() {
                 href: "#featured",
                 variant: "secondary"
               }}
-              variant="default"
+              variant="promotional"
+              backgroundType="gradient"
+              backgroundColor="orange"
+              textColor="foreground"
             />
           </div>
         </div>
@@ -100,18 +103,40 @@ export default async function ServicesPage() {
           </div>
         </section>
 
-        {/* Banner before CTA */}
-        <div className="py-8 sm:py-10 bg-muted/30">
+        {/* Promotional Banner for Companies Directory */}
+        <div className="py-8 sm:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Banner
-              title="هل تحتاج إلى خدمة مخصصة؟"
-              description="نقدم حلولاً مخصصة حسب احتياجاتكم في جميع أنحاء المملكة العربية السعودية. تواصل معنا لمناقشة متطلباتكم."
+              title="اكتشف أفضل مقدمي الخدمات"
+              description="تواصل مع أفضل الشركات في المملكة التي تقدم هذه الخدمات الاحترافية"
               cta={{
-                text: "تواصل معنا",
-                href: "/contact",
+                text: "تصفح دليل الشركات",
+                href: "/companies",
                 variant: "outline"
               }}
               variant="compact"
+              backgroundType="gradient"
+              backgroundColor="blue"
+              textColor="foreground"
+            />
+          </div>
+        </div>
+
+        {/* Promotional Banner for Encyclopedia */}
+        <div className="py-8 sm:py-10 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Banner
+              title="هل تبحث عن معلومات إضافية؟"
+              description="تعرف على نصائح ومعلومات مفيدة حول هذه الخدمات في موسوعتنا"
+              cta={{
+                text: "تصفح الموسوعة",
+                href: "/encyclopedia",
+                variant: "default"
+              }}
+              variant="promotional"
+              backgroundType="gradient"
+              backgroundColor="purple"
+              textColor="foreground"
             />
           </div>
         </div>

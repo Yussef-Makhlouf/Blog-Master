@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import PageHeader from "@/components/page-header"
 import SectionHeader from "@/components/section-header"
-import SubHero from "@/components/sub-hero"
+
 import Banner from "@/components/banner"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -41,15 +41,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Sub Hero Section */}
-        <SubHero 
-          title="اكتشف المزيد عنا"
-          sections={aboutSections}
-        >
-          <p className="text-muted-foreground text-lg">
-            نحن فريق من الخبراء الملتزمين بتقديم حلول تقنية مبتكرة تساعد عملاءنا على النمو والنجاح
-          </p>
-        </SubHero>
 
         {/* Our Story */}
         <section id="story" className="py-16 sm:py-20">
@@ -73,7 +64,7 @@ export default function AboutPage() {
                 </Button>
               </div>
               <div className="relative">
-                <img src="/collaborative-teamwork.png" alt="فريق العمل" className="rounded-lg shadow-lg" />
+                <img src="/logo-white.png" alt="فريق العمل" className="rounded-lg shadow-lg w-full h-full p-4" />
               </div>
             </div>
           </div>
@@ -83,10 +74,10 @@ export default function AboutPage() {
         <div className="py-8 sm:py-10 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Banner
-              title="هل تبحث عن شريك تقني؟"
-              description="نقدم حلولاً مخصصة لمساعدتك في تحقيق أهدافك التقنية."
+              title="هل تبحث عن شريك إعلاني ؟"
+              description="انشر شركتك معنا أو اكتب مقالاً تعريفيًا لتوصيل رسالتك إلى جمهور أوسع."
               cta={{
-                text: "ابدأ مشروعك",
+                text: "سجل شركتك الآن",
                 href: "/contact",
                 variant: "outline"
               }}
@@ -95,44 +86,54 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Our Values */}
+        {/* Our Values - Repurposed for Advertising/Marketing */}
         <section id="values" className="py-16 sm:py-20 bg-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
-              subtitle="قيمنا"
-              title="المبادئ التي توجه عملنا"
-              description="نؤمن بقيم أساسية تشكل أساس كل ما نقوم به"
+              subtitle="خدماتنا الإعلانية"
+              title="مساحة إعلانية متميزة لشركتك"
+              description="انشر شركتك معنا ووصّل رسالتك إلى جمهور واسع في منطقة الخليج"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-10 sm:mt-12">
+            {/* Modified grid to show 2 cards on mobile, 2 on tablet, 4 on desktop */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-10 sm:mt-12">
               <div className="text-center">
                 <div className="flex justify-center mb-4">
                   <Users className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">العمل الجماعي</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">نؤمن بقوة التعاون والعمل كفريق واحد لتحقيق أفضل النتائج</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">وصول واسع</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">تواصل مع جمهور كبير من سكان الخليج من خلال منصتنا</p>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-4">
                   <Target className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">التركيز على الهدف</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">نركز على تحقيق أهداف عملائنا بدقة وفعالية</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">استهداف دقيق</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">استفد من استهداف دقيق لضمان وصول إعلانك إلى الجمهور المناسب</p>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-4">
                   <Award className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">التميز</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">نسعى للتميز في كل مشروع ونلتزم بأعلى معايير الجودة</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">محتوى متميز</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">نوفر مساحة إعلانية متميزة مع محتوى عالي الجودة يخدم المجتمع</p>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-4">
                   <Heart className="h-10 w-10 sm:h-12 sm:w-12 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">الشغف</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">نحب ما نقوم به ونضع شغفنا في كل تفصيل من تفاصيل عملنا</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">معلومات قيمة</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">ساهم في نشر مقالات ومعلومات مهمة تخدم حياة سكان الخليج</p>
               </div>
+            </div>
+            
+            <div className="text-center mt-10 sm:mt-12">
+              <Button asChild size="lg" variant="default">
+                <Link href="/contact">
+                  سجل شركتك الآن
+                  <ArrowLeft className="mr-2 h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>

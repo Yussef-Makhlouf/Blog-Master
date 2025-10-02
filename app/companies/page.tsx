@@ -5,6 +5,7 @@ import PageHeader from "@/components/page-header"
 import GridLayout from "@/components/grid-layout"
 import CompanyCard from "@/components/company-card"
 import Breadcrumb from "@/components/breadcrumb"
+import Banner from "@/components/banner"
 import { getCompanies } from "@/lib/data"
 import { Grid3X3, List } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -34,6 +35,26 @@ export default async function CompaniesPage() {
         >
           <Breadcrumb items={[{ label: "Companies" }]} className="justify-center" />
         </PageHeader>
+
+        {/* Promotional Banner for Blog/Website Services */}
+        <div className="py-6 sm:py-8 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Banner
+              title="هل تبحث عن أفضل مقدمي الخدمات؟"
+              description="استعرض دليلنا الشامل لأفضل الشركات في المملكة واحجز الخدمة المناسبة لك الآن"
+              image="/company-directory-banner.jpg"
+              cta={{
+                text: "تصفح جميع الشركات",
+                href: "#companies",
+                variant: "default"
+              }}
+              variant="promotional"
+              backgroundType="gradient"
+              backgroundColor="blue"
+              textColor="foreground"
+            />
+          </div>
+        </div>
 
         <section className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,6 +96,25 @@ export default async function CompaniesPage() {
             </GridLayout>
           </div>
         </section>
+
+        {/* Promotional Banner for Encyclopedia */}
+        <div className="py-8 sm:py-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Banner
+              title="هل تبحث عن معلومات إضافية؟"
+              description="تعرف على معلومات مفيدة حول الخدمات المختلفة في موسوعتنا الشاملة"
+              cta={{
+                text: "تصفح الموسوعة",
+                href: "/encyclopedia",
+                variant: "outline"
+              }}
+              variant="compact"
+              backgroundType="gradient"
+              backgroundColor="purple"
+              textColor="foreground"
+            />
+          </div>
+        </div>
       </main>
 
       <Footer />

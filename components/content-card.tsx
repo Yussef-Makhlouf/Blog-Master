@@ -23,6 +23,9 @@ export default function ContentCard({
   className,
   variant = "default"
 }: ContentCardProps) {
+  // Check if href is valid
+  const isValidHref = href && href !== "#";
+  
   if (variant === "minimal") {
     return (
       <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
@@ -49,13 +52,19 @@ export default function ContentCard({
           <CardDescription className="text-sm line-clamp-2 mb-3">
             {description}
           </CardDescription>
-          <Link
-            href={href}
-            className="text-primary text-sm font-medium hover:underline flex items-center"
-          >
-            تعرف على المزيد
-            <ArrowRight className="mr-1 h-3 w-3" />
-          </Link>
+          {isValidHref ? (
+            <Link
+              href={href}
+              className="text-primary text-sm font-medium hover:underline flex items-center"
+            >
+              تعرف على المزيد
+              <ArrowRight className="mr-1 h-3 w-3" />
+            </Link>
+          ) : (
+            <span className="text-muted-foreground text-sm">
+              محتوى غير متوفر
+            </span>
+          )}
         </CardContent>
       </Card>
     )
@@ -87,11 +96,13 @@ export default function ContentCard({
         </div>
         
         {/* Invisible link overlay */}
-        <Link
-          href={href}
-          className="absolute inset-0"
-          aria-label={`اقرأ المزيد عن ${title}`}
-        />
+        {isValidHref && (
+          <Link
+            href={href}
+            className="absolute inset-0"
+            aria-label={`اقرأ المزيد عن ${title}`}
+          />
+        )}
       </Card>
     )
   }
@@ -125,13 +136,19 @@ export default function ContentCard({
       </CardHeader>
       
       <CardContent className="pt-0 px-4 pb-4">
-        <Link
-          href={href}
-          className="text-primary text-sm font-medium hover:underline flex items-center"
-        >
-          تعرف على المزيد
-          <ArrowRight className="ml-1 h-3 w-3" />
-        </Link>
+        {isValidHref ? (
+          <Link
+            href={href}
+            className="text-primary text-sm font-medium hover:underline flex items-center"
+          >
+            تعرف على المزيد
+            <ArrowRight className="ml-1 h-3 w-3" />
+          </Link>
+        ) : (
+          <span className="text-muted-foreground text-sm">
+            محتوى غير متوفر
+          </span>
+        )}
       </CardContent>
     </Card>
   )
