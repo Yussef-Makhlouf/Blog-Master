@@ -40,6 +40,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/companies" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
+                  <span className="mr-2 text-primary">→</span> الشركات
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors flex items-center">
                   <span className="mr-2 text-primary">→</span> المدونة
                 </Link>

@@ -1,6 +1,7 @@
 import servicesData from "@/data/services.json"
 import blogData from "@/data/blog.json"
 import encyclopediaData from "@/data/encyclopedia.json"
+import companiesData from "@/data/companies.json"
 
 // Services
 export async function getServices() {
@@ -63,4 +64,17 @@ export async function getCategoryEntry(categoryId: string, entryId: string) {
   } catch (error) {
     return null
   }
+}
+
+// Companies
+export async function getCompanies() {
+  return companiesData
+}
+
+export async function getCompany(id: string) {
+  return companiesData.find((company) => company.id === id)
+}
+
+export async function getCompaniesByService(serviceId: string) {
+  return companiesData.filter((company) => company.services.includes(serviceId))
 }

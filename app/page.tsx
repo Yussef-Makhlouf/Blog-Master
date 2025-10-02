@@ -230,6 +230,12 @@ export default async function HomePage() {
                   <ArrowLeft className="mr-2 h-5 w-5" />
                 </Link>
               </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="/companies">
+                  اكتشف الشركات
+                  <ArrowLeft className="mr-2 h-5 w-5" />
+                </Link>
+              </Button>
               <Button
                 asChild
                 size="lg"

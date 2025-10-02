@@ -11,6 +11,7 @@ export default function Navbar() {
   const navigation = [
     { name: "الرئيسية", href: "/" },
     { name: "الخدمات", href: "/services" },
+    { name: "الشركات", href: "/companies" },
     { name: "المدونة", href: "/blog" },
     { name: "الموسوعة", href: "/encyclopedia" },
     { name: "اتصل بنا", href: "/contact" },
@@ -32,18 +33,26 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-reverse space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-muted-foreground hover:border-primary hover:text-foreground transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-  
-          </div>
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-foreground hover:text-primary transition-colors font-medium">
+              الرئيسية
+            </Link>
+            <Link href="/services" className="text-foreground hover:text-primary transition-colors font-medium">
+              الخدمات
+            </Link>
+            <Link href="/companies" className="text-foreground hover:text-primary transition-colors font-medium">
+              الشركات
+            </Link>
+            <Link href="/blog" className="text-foreground hover:text-primary transition-colors font-medium">
+              المدونة
+            </Link>
+            <Link href="/encyclopedia" className="text-foreground hover:text-primary transition-colors font-medium">
+              الموسوعة
+            </Link>
+            <Link href="/about" className="text-foreground hover:text-primary transition-colors font-medium">
+              من نحن
+            </Link>
+          </nav>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
