@@ -52,6 +52,7 @@ export default async function CompaniesPage() {
               backgroundType="gradient"
               backgroundColor="blue"
               textColor="foreground"
+              className="p-5"
             />
           </div>
         </div>
@@ -112,6 +113,7 @@ export default async function CompaniesPage() {
               backgroundType="gradient"
               backgroundColor="purple"
               textColor="foreground"
+              className="mt-4 p-4"
             />
           </div>
         </div>

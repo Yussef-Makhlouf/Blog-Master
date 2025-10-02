@@ -162,7 +162,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
                   <Banner
                     title={promotionalData.title}
                     description={promotionalData.description}
-                    image={company.image}
+                    // image={company.image}
                     cta={{
                       text: promotionalData.ctaText,
                       href: `/contact?company=${company.id}`,
@@ -172,6 +172,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
                     backgroundType="gradient"
                     backgroundColor="blue"
                     textColor="foreground"
+                    className="p-5"
                   />
                 )}
 
@@ -189,6 +190,7 @@ export default async function CompanyPage({ params }: CompanyPageProps) {
                     backgroundType="gradient"
                     backgroundColor="green"
                     textColor="foreground"
+                    className="mt-4 p-4"
                   />
                 )}
 

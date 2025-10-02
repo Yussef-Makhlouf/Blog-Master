@@ -62,6 +62,7 @@ export default async function ServicesPage() {
               backgroundType="gradient"
               backgroundColor="orange"
               textColor="foreground"
+              className="mt-8 p-5"
             />
           </div>
         </div>
@@ -137,6 +138,7 @@ export default async function ServicesPage() {
               backgroundType="gradient"
               backgroundColor="purple"
               textColor="foreground"
+              className="mt-8 p-5"
             />
           </div>
         </div>

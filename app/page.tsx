@@ -51,8 +51,8 @@ export default async function HomePage() {
         />
 
         {/* Promotional Banner for Main Services */}
-        <div className="py-8 sm:py-12 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="py-8 sm:py-12 px-8 bg-muted/30">
+          <div className="max-w-7xl mx-auto lg:px-8">
             <Banner
               title="اكتشف أفضل الخدمات في المملكة"
               description="تواصل مع أفضل الشركات المقدمة للخدمات في السعودية واحجز الخدمة المناسبة لك الآن"
@@ -66,6 +66,7 @@ export default async function HomePage() {
               backgroundType="gradient"
               backgroundColor="blue"
               textColor="foreground"
+              className="p-4"
             />
           </div>
         </div>

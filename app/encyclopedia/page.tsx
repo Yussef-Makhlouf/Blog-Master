@@ -70,6 +70,7 @@ export default async function EncyclopediaPage() {
               backgroundType="gradient"
               backgroundColor="green"
               textColor="foreground"
+              className="p-5"
             />
           </div>
         </div>
