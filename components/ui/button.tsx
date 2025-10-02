@@ -10,22 +10,22 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-primary text-white shadow-sm hover:bg-primary-hover hover:shadow-md active:translate-y-0.5 active:shadow-sm',
+          'bg-primary text-primary-foreground shadow-sm hover:bg-primary-hover hover:shadow-md active:translate-y-0.5 active:shadow-sm',
         destructive:
-          'bg-destructive text-white shadow-sm hover:bg-destructive/90 hover:shadow-md focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 active:translate-y-0.5 active:shadow-sm',
+          'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 hover:shadow-md focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 active:translate-y-0.5 active:shadow-sm',
         outline:
-          'border border-input bg-background shadow-sm hover:bg-secondary hover:text-foreground hover:border-primary/30 active:translate-y-0.5 active:shadow-sm',
+          'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground active:translate-y-0.5 active:shadow-sm',
         secondary:
-          'bg-secondary text-foreground shadow-sm hover:bg-secondary-hover hover:shadow-md active:translate-y-0.5 active:shadow-sm',
+          'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-hover hover:shadow-md active:translate-y-0.5 active:shadow-sm',
         ghost:
-          'hover:bg-secondary/80 hover:text-foreground active:translate-y-0.5 active:bg-secondary',
-        link: 'text-primary underline-offset-4 hover:underline hover:text-primary/80 transition-colors',
+          'hover:bg-accent hover:text-accent-foreground active:translate-y-0.5',
+        link: 'text-primary underline-offset-4 hover:underline hover:text-primary-hover transition-colors',
       },
       size: {
         default: 'btn-md h-10 px-5 py-2 has-[>svg]:px-4',
         sm: 'btn-sm h-8 rounded-md gap-1.5 px-3.5 has-[>svg]:px-3 text-xs',
         lg: 'btn-lg h-12 rounded-md px-6 has-[>svg]:px-5 text-base',
-        icon: 'size-10 p-2 hover:bg-secondary/10',
+        icon: 'size-10 p-2 hover:bg-accent',
       },
     },
     defaultVariants: {

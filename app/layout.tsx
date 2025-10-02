@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+// import "./styles/grid-layout.css"
 import "./globals.css"
 import localFont from "next/font/local"
 

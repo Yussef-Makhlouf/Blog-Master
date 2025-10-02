@@ -1,9 +1,9 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle } from "lucide-react"
+import ImageWithFallback from "@/components/image-with-fallback"
 
 interface ServiceCardProps {
   id: string
@@ -28,55 +28,57 @@ export default function ServiceCard({
   className,
   variant = "default",
 }: ServiceCardProps) {
-  // Unified styling constants
-  const cardBaseClasses = "group transition-all duration-300 rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md"
-  const imageClasses = "object-cover transition-transform duration-300"
-  const titleClasses = "font-semibold text-balance transition-colors"
-  const descriptionClasses = "text-sm text-pretty leading-relaxed"
-  const badgeClasses = "bg-primary text-primary-foreground"
-  const buttonClasses = "group/btn transition-all duration-200"
-
   if (variant === "horizontal") {
     return (
-      <Card className={`${cardBaseClasses} flex flex-col md:flex-row ${className}`}>
-        <div className="md:w-1/3 relative overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-t-none">
-          <Image
-            src={image || "/placeholder.svg"}
-            alt={title}
-            width={400}
-            height={300}
-            className={`${imageClasses} w-full h-48 md:h-full group-hover:scale-105`}
-          />
-        </div>
-        <div className="md:w-2/3 flex flex-col">
-          <CardHeader>
-            <div className="flex justify-between items-start">
-              <CardTitle className={`${titleClasses} text-xl group-hover:text-primary`}>
-                {title}
-              </CardTitle>
-              <Badge className={badgeClasses}>{price}</Badge>
-            </div>
-            <CardDescription className={descriptionClasses}>{description}</CardDescription>
-          </CardHeader>
-          <CardContent className="flex-grow">
-            <div className="space-y-2 mb-4">
-              {features.slice(0, 2).map((feature, index) => (
-                <div key={index} className="flex items-center text-sm">
-                  <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <span>المدة: {duration}</span>
-              <Button asChild size="sm" className={buttonClasses}>
-                <Link href={`/services/${id}`}>
-                  تعرف على المزيد
-                  <ArrowRight className="mr-2 h-4 w-4 group-hover/btn:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-          </CardContent>
+      <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
+        <div className="flex flex-col md:flex-row">
+          {/* Image section - top on mobile, left on desktop */}
+          <div className="md:w-2/5 relative w-full aspect-video md:aspect-auto">
+            <ImageWithFallback
+              src={image || "/placeholder.svg"}
+              alt={title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          
+          {/* Content section - below image on mobile, right on desktop */}
+          <div className="md:w-3/5 flex flex-col p-4">
+            <CardHeader className="p-0 mb-3">
+              <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                <CardTitle className="text-xl font-semibold">
+                  {title}
+                </CardTitle>
+                <Badge className="text-base px-2 py-1">
+                  {price}
+                </Badge>
+              </div>
+              <CardDescription className="text-sm line-clamp-2">
+                {description}
+              </CardDescription>
+            </CardHeader>
+            
+            <CardContent className="p-0 flex-grow">
+              <ul className="space-y-2 mb-4">
+                {features.slice(0, 2).map((feature, index) => (
+                  <li key={index} className="flex items-start text-sm">
+                    <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="flex flex-wrap items-center justify-between text-sm text-muted-foreground gap-2">
+                <span className="font-medium">المدة: {duration}</span>
+                <Button asChild size="sm" variant="default">
+                  <Link href={`/services/${id}`} className="flex items-center">
+                    تعرف على المزيد
+                    <ArrowRight className="mr-1 h-3 w-3" />
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </div>
         </div>
       </Card>
     )
@@ -84,40 +86,46 @@ export default function ServiceCard({
 
   if (variant === "featured") {
     return (
-      <Card className={`${cardBaseClasses} hover:shadow-xl hover:-translate-y-1 ${className}`}>
-        <div className="relative overflow-hidden rounded-t-lg">
-          <Image
+      <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
+        {/* Image section - always on top */}
+        <div className="relative w-full aspect-video">
+          <ImageWithFallback
             src={image || "/placeholder.svg"}
             alt={title}
-            width={400}
-            height={300}
-            className={`${imageClasses} w-full h-56 group-hover:scale-105`}
+            fill
+            className="object-cover"
           />
-          <Badge className={`${badgeClasses} absolute top-4 right-4 text-lg py-2 px-3`}>
+          <Badge className="absolute top-3 right-3 text-lg px-3 py-1.5">
             {price}
           </Badge>
         </div>
-        <CardHeader>
-          <CardTitle className={`${titleClasses} text-2xl group-hover:text-primary`}>
+        
+        {/* Content section - always below image */}
+        <CardHeader className="pb-3 px-4 pt-4">
+          <CardTitle className="text-2xl font-semibold">
             {title}
           </CardTitle>
-          <CardDescription className={`${descriptionClasses} text-base`}>{description}</CardDescription>
+          <CardDescription className="text-base mt-1">
+            {description}
+          </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="space-y-3">
+        
+        <CardContent className="pt-0 px-4 pb-4">
+          <ul className="space-y-2 mb-5">
             {features.slice(0, 4).map((feature, index) => (
-              <div key={index} className="flex items-center text-base">
-                <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
+              <li key={index} className="flex items-start text-base">
+                <CheckCircle className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-0.5" />
                 <span>{feature}</span>
-              </div>
+              </li>
             ))}
-          </div>
-          <div className="flex items-center justify-between text-base text-muted-foreground pt-4 border-t border-border">
-            <span className="font-medium">المدة: {duration}</span>
-            <Button asChild size="lg" className={buttonClasses}>
-              <Link href={`/services/${id}`}>
+          </ul>
+          
+          <div className="flex flex-wrap items-center justify-between text-base text-muted-foreground gap-2 pt-3 border-t border-border">
+            <span className="font-bold">المدة: {duration}</span>
+            <Button asChild size="default" variant="default">
+              <Link href={`/services/${id}`} className="flex items-center">
                 تعرف على المزيد
-                <ArrowRight className="mr-2 h-5 w-5 group-hover/btn:translate-x-1" />
+                <ArrowRight className="mr-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -128,43 +136,48 @@ export default function ServiceCard({
 
   // Default variant
   return (
-    <Card className={`${cardBaseClasses} hover:shadow-lg hover:-translate-y-1 ${className}`}>
-      <div className="relative overflow-hidden rounded-t-lg">
-        <Image
+    <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
+      {/* Image section - always on top */}
+      <div className="relative w-full aspect-video">
+        <ImageWithFallback
           src={image || "/placeholder.svg"}
           alt={title}
-          width={400}
-          height={300}
-          className={`${imageClasses} w-full h-48 group-hover:scale-105`}
+          fill
+          className="object-cover"
         />
-        <Badge className={`${badgeClasses} absolute top-3 right-3`}>{price}</Badge>
+        <Badge className="absolute top-2 right-2 text-sm px-2 py-1">
+          {price}
+        </Badge>
       </div>
 
-      <CardHeader>
-        <CardTitle className={`${titleClasses} text-xl group-hover:text-primary`}>
+      {/* Content section - always below image */}
+      <CardHeader className="pb-3 px-4 pt-4">
+        <CardTitle className="text-xl font-semibold">
           {title}
         </CardTitle>
-        <CardDescription className={descriptionClasses}>{description}</CardDescription>
+        <CardDescription className="text-sm line-clamp-2 mt-1">
+          {description}
+        </CardDescription>
       </CardHeader>
 
-      <CardContent className="space-y-4">
-        <div className="space-y-2">
+      <CardContent className="pt-0 px-4 pb-4">
+        <ul className="space-y-2 mb-4">
           {features.slice(0, 3).map((feature, index) => (
-            <div key={index} className="flex items-center text-sm">
-              <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+            <li key={index} className="flex items-start text-sm">
+              <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0 mt-0.5" />
               <span>{feature}</span>
-            </div>
+            </li>
           ))}
+        </ul>
+
+        <div className="flex flex-wrap items-center justify-between text-sm text-muted-foreground gap-2 pt-3 border-t border-border">
+          <span className="font-medium">المدة: {duration}</span>
         </div>
 
-        <div className="flex items-center justify-between text-sm text-muted-foreground pt-2 border-t border-border">
-          <span>المدة: {duration}</span>
-        </div>
-
-        <Button asChild className={`w-full ${buttonClasses}`}>
-          <Link href={`/services/${id}`}>
+        <Button asChild className="w-full mt-4" variant="default">
+          <Link href={`/services/${id}`} className="flex items-center justify-center">
             تعرف على المزيد
-            <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </CardContent>

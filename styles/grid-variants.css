@@ -1,0 +1,39 @@
+/* Custom Grid Variants for Enhanced Card Layouts */
+
+/* Staggered Grid - Creates a brick-like pattern */
+.grid-staggered {
+  grid-auto-flow: row dense;
+}
+
+@media (min-width: 768px) {
+  .grid-staggered > :nth-child(3n+2) {
+    margin-top: 2rem;
+  }
+}
+
+/* Mixed Grid - Combines different card sizes */
+.grid-mixed {
+  grid-auto-rows: masonry;
+}
+
+@media (min-width: 768px) {
+  .grid-mixed > :nth-child(4n+1) {
+    grid-column: span 2;
+  }
+}
+
+/* Masonry Grid - Flexible height items */
+.grid-rows-masonry {
+  grid-template-rows: masonry;
+  grid-auto-rows: 1px;
+}
+
+/* Alternating Grid - Alternates card styles */
+.grid-alternating {
+  grid-auto-flow: row dense;
+}
+
+/* Featured Grid - Highlights specific items */
+.grid-featured {
+  grid-auto-flow: row dense;
+}

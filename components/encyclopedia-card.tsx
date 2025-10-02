@@ -1,8 +1,8 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, BookOpen, Calendar } from "lucide-react"
+import ImageWithFallback from "@/components/image-with-fallback"
 
 interface EncyclopediaCardProps {
   id: string
@@ -25,54 +25,47 @@ export default function EncyclopediaCard({
   className,
   variant = "default",
 }: EncyclopediaCardProps) {
-  // Unified styling constants
-  const cardBaseClasses = "group transition-all duration-300 rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md"
-  const imageClasses = "object-cover transition-transform duration-300"
-  const titleClasses = "font-semibold text-balance transition-colors"
-  const descriptionClasses = "text-sm text-pretty leading-relaxed"
-  const badgeClasses = "bg-primary text-primary-foreground"
-  const linkClasses = "inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-  const textMutedClasses = "text-xs text-muted-foreground"
-
   if (variant === "list") {
     return (
-      <Card className={`${cardBaseClasses} ${className}`}>
-        <div className="flex items-center p-4">
-          <div className="relative flex-shrink-0 mr-4">
-            <Image
+      <Card className={`overflow-hidden border border-border rounded-xl transition-all duration-300 hover:shadow-md ${className}`}>
+        <div className="flex flex-col sm:flex-row items-center p-5 gap-5">
+          {/* Image section - top on mobile, left on desktop */}
+          <div className="relative flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden">
+            <ImageWithFallback
               src={image || "/placeholder.svg"}
               alt={title}
-              width={80}
-              height={80}
-              className={`${imageClasses} rounded-lg w-20 h-20`}
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-          <div className="flex-grow">
-            <CardHeader className="p-0">
-              <div className="flex justify-between items-start mb-2">
-                <CardTitle className={`${titleClasses} text-lg group-hover:text-primary`}>
+          
+          {/* Content section - below image on mobile, right on desktop */}
+          <div className="flex-grow w-full">
+            <CardHeader className="p-0 pb-3">
+              <div className="flex flex-wrap justify-between items-start gap-3">
+                <CardTitle className="text-xl font-bold leading-tight">
                   {title}
                 </CardTitle>
-                <Badge className={`${badgeClasses} text-xs`}>
+                <Badge className="text-xs whitespace-nowrap px-3 py-1 rounded-full">
                   {entryCount} مدخل
                 </Badge>
               </div>
-              <CardDescription className={`${descriptionClasses} line-clamp-2 mb-3`}>
+              <CardDescription className="text-sm line-clamp-2 mt-2">
                 {description}
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <Calendar className="h-3 w-3 mr-1" />
-                  <span className={textMutedClasses}>تم التحديث {new Date(lastUpdated).toLocaleDateString()}</span>
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                <div className="flex items-center text-xs text-muted-foreground">
+                  <Calendar className="h-4 w-4 mr-1.5" />
+                  <span>تم التحديث {new Date(lastUpdated).toLocaleDateString("ar-EG")}</span>
                 </div>
                 <Link
                   href={`/encyclopedia/${id}`}
-                  className={linkClasses}
+                  className="text-primary text-sm font-medium hover:underline flex items-center gap-1"
                 >
                   استكشف
-                  <ArrowRight className="mr-1 h-3 w-3 group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </CardContent>
@@ -84,35 +77,37 @@ export default function EncyclopediaCard({
 
   if (variant === "compact") {
     return (
-      <Card className={`${cardBaseClasses} text-center p-4 ${className}`}>
-        <div className="relative flex justify-center mb-3">
-          <Image
+      <Card className={`text-center overflow-hidden border border-border rounded-xl p-5 transition-all duration-300 hover:shadow-md ${className}`}>
+        {/* Image section - always on top */}
+        <div className="relative flex justify-center mb-4 w-20 h-20 mx-auto rounded-full overflow-hidden">
+          <ImageWithFallback
             src={image || "/placeholder.svg"}
             alt={title}
-            width={60}
-            height={60}
-            className={`${imageClasses} rounded-full w-16 h-16`}
+            fill
+            className="object-cover transition-transform duration-300 hover:scale-105"
           />
-          <Badge className={`${badgeClasses} absolute -bottom-1 right-1/4 text-xs`}>
+          <Badge className="absolute -bottom-2 right-1/4 text-xs px-2 py-1 rounded-full">
             {entryCount}
           </Badge>
         </div>
-        <CardHeader className="p-0 mb-2">
-          <CardTitle className={`${titleClasses} text-base group-hover:text-primary`}>
+        
+        {/* Content section - always below image */}
+        <CardHeader className="p-0 pb-3">
+          <CardTitle className="text-lg font-bold leading-tight">
             {title}
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
-          <div className="flex items-center justify-center mb-3">
-            <Calendar className="h-3 w-3 mr-1" />
-            <span className={textMutedClasses}>{new Date(lastUpdated).toLocaleDateString()}</span>
+          <div className="flex items-center justify-center mb-4 text-xs text-muted-foreground">
+            <Calendar className="h-4 w-4 mr-1.5" />
+            <span>{new Date(lastUpdated).toLocaleDateString("ar-EG")}</span>
           </div>
           <Link
             href={`/encyclopedia/${id}`}
-            className={linkClasses}
+            className="text-primary text-sm font-medium hover:underline flex items-center justify-center gap-1"
           >
             استكشف
-            <ArrowRight className="mr-1 h-3 w-3 group-hover:translate-x-1" />
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </CardContent>
       </Card>
@@ -121,43 +116,48 @@ export default function EncyclopediaCard({
 
   // Default variant
   return (
-    <Card className={`${cardBaseClasses} hover:shadow-lg hover:-translate-y-1 ${className}`}>
-      <div className="relative overflow-hidden rounded-t-lg">
-        <Image
+    <Card className={`overflow-hidden border border-border rounded-xl transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${className}`}>
+      {/* Image section - always on top */}
+      <div className="relative w-full aspect-video overflow-hidden rounded-t-xl">
+        <ImageWithFallback
           src={image || "/placeholder.svg"}
           alt={title}
-          width={350}
-          height={250}
-          className={`${imageClasses} w-full h-48 group-hover:scale-105`}
+          fill
+          className="object-cover transition-transform duration-500 hover:scale-110"
         />
-        <Badge className={`${badgeClasses} absolute top-3 left-3`}>{entryCount} مدخل</Badge>
+        <Badge className="absolute top-3 left-3 text-xs px-3 py-1 rounded-full bg-background/80 backdrop-blur-sm">
+          {entryCount} مدخل
+        </Badge>
       </div>
 
-      <CardHeader>
-        <CardTitle className={`${titleClasses} text-lg group-hover:text-primary`}>
+      {/* Content section - always below image */}
+      <CardHeader className="pb-4 px-5 pt-5">
+        <CardTitle className="text-xl font-bold leading-tight">
           {title}
         </CardTitle>
-        <CardDescription className={descriptionClasses}>{description}</CardDescription>
+        <CardDescription className="text-sm line-clamp-2 mt-2">
+          {description}
+        </CardDescription>
       </CardHeader>
 
-      <CardContent>
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center">
-            <BookOpen className="h-3 w-3 mr-1" />
-            <span className={textMutedClasses}>{entryCount} مدخل</span>
+      <CardContent className="pt-0 px-5 pb-5">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div className="flex items-center text-xs text-muted-foreground">
+            <BookOpen className="h-4 w-4 mr-1.5" />
+            <span>{entryCount} مدخل</span>
           </div>
-          <div className="flex items-center">
-            <Calendar className="h-3 w-3 mr-1" />
-            <span className={textMutedClasses}>تم التحديث {new Date(lastUpdated).toLocaleDateString()}</span>
+          <div className="flex items-center text-xs text-muted-foreground">
+            <Calendar className="h-4 w-4 mr-1.5" />
+            <span>تم التحديث {new Date(lastUpdated).toLocaleDateString("ar-EG")}</span>
           </div>
         </div>
 
         <Link
           href={`/encyclopedia/${id}`}
-          className={linkClasses}
+          className="text-primary text-sm font-medium hover:underline flex items-center gap-1 w-fit"
         >
           استكشف الفئة
-          <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1" />
+          <ArrowRight className="h-4 w-4" />
         </Link>
       </CardContent>
     </Card>

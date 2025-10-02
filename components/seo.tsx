@@ -45,7 +45,7 @@ export default function SEO({
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={`${siteUrl}${ogImage}`} />
       <meta property="og:url" content={`${siteUrl}${canonical || ""}`} />
-      <meta property="og:site_name" content="الموقع الاحترافي" />
+      <meta property="og:site_name" content="قمر الخليج الذهبي" />
 
       {/* Article specific */}
       {publishedTime && <meta property="article:published_time" content={publishedTime} />}

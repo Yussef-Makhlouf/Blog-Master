@@ -6,6 +6,8 @@ import GridLayout from "@/components/grid-layout"
 import ContentCard from "@/components/content-card"
 import ServiceCard from "@/components/service-card"
 import EncyclopediaCard from "@/components/encyclopedia-card"
+import SubHero from "@/components/sub-hero"
+import Banner from "@/components/banner"
 import { getServices, getBlogTopics, getEncyclopediaCategories } from "@/lib/data"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -43,37 +45,25 @@ export default async function HomePage() {
           features={["خدمات خبيرة", "أحدث الرؤى", "موارد شاملة", "دعم احترافي"]}
         />
 
-        {/* Stats Section */}
-        <section className="py-16 bg-muted/30">
+        {/* Banner after Hero */}
+        <div className="py-8 sm:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-2">
-                <div className="flex justify-center">
-                  <Users className="h-12 w-12 text-primary" />
-                </div>
-                <div className="text-3xl font-bold text-foreground">500+</div>
-                <div className="text-muted-foreground">عميل سعيد</div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-center">
-                  <Award className="h-12 w-12 text-primary" />
-                </div>
-                <div className="text-3xl font-bold text-foreground">50+</div>
-                <div className="text-muted-foreground">مشروع مكتمل</div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex justify-center">
-                  <Zap className="h-12 w-12 text-primary" />
-                </div>
-                <div className="text-3xl font-bold text-foreground">99%</div>
-                <div className="text-muted-foreground">رضا العملاء</div>
-              </div>
-            </div>
+            <Banner
+              title="عروض خاصة هذا الشهر"
+              description="احصل على خصومات تصل إلى 20% على جميع خدماتنا هذا الشهر فقط. لا تفوت هذه الفرصة المحدودة!"
+              image="/special-offer-banner.jpg"
+              cta={{
+                text: "اعرف المزيد",
+                href: "/services",
+                variant: "secondary"
+              }}
+              variant="default"
+            />
           </div>
-        </section>
+        </div>
 
         {/* Featured Services */}
-        <section className="py-20">
+        <section id="services" className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               subtitle="خدماتنا"
@@ -91,9 +81,9 @@ export default async function HomePage() {
                 price={featuredServices[0].price}
                 duration={featuredServices[0].duration}
                 variant="featured"
-                className="mb-12"
+                className="mb-8 sm:mb-12"
               />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {featuredServices.slice(1).map((service) => (
                   <ServiceCard
                     key={service.id}
@@ -110,7 +100,7 @@ export default async function HomePage() {
               </div>
             </GridLayout>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-10 sm:mt-12">
               <Button asChild size="lg">
                 <Link href="/services">
                   عرض جميع الخدمات
@@ -121,8 +111,24 @@ export default async function HomePage() {
           </div>
         </section>
 
+        {/* Banner between sections */}
+        <div className="py-8 sm:py-10 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Banner
+              title="هل تحتاج إلى استشارة مجانية؟"
+              description="احصل على استشارة مجانية لمدة 30 دقيقة مع خبرائنا لمناقشة احتياجاتك وتقديم حلول مخصصة."
+              cta={{
+                text: "احجز الآن",
+                href: "/contact",
+                variant: "outline"
+              }}
+              variant="compact"
+            />
+          </div>
+        </div>
+
         {/* Featured Blog Topics */}
-        <section className="py-20 bg-muted/30">
+        <section id="blog" className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               subtitle="مدونتنا"
@@ -144,7 +150,7 @@ export default async function HomePage() {
               ))}
             </GridLayout>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-10 sm:mt-12">
               <Button asChild variant="outline" size="lg">
                 <Link href="/blog">
                   استكشف جميع المواضيع
@@ -156,7 +162,7 @@ export default async function HomePage() {
         </section>
 
         {/* Featured Encyclopedia Categories */}
-        <section className="py-20">
+        <section id="encyclopedia" className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               subtitle="الموسوعة"
@@ -195,7 +201,7 @@ export default async function HomePage() {
               </div>
             </GridLayout>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-10 sm:mt-12">
               <Button asChild variant="outline" size="lg">
                 <Link href="/encyclopedia">
                   تصفح الموسوعة
@@ -207,13 +213,13 @@ export default async function HomePage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-primary text-primary-foreground">
+        <section className="py-16 sm:py-20 bg-primary text-primary-foreground">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-balance mb-6">هل أنت مستعد للبدء؟</h2>
-            <p className="text-xl text-primary-foreground/90 text-pretty mb-8 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-balance mb-4 sm:mb-6">هل أنت مستعد للبدء؟</h2>
+            <p className="text-base sm:text-xl text-primary-foreground/90 text-pretty mb-6 sm:mb-8 max-w-2xl mx-auto">
               انضم إلى مئات العملاء الراضين الذين حولوا أعمالهم بخدماتنا المهنية.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 justify-center">
               <Button asChild size="lg" variant="secondary">
                 <Link href="/services">
                   ابدأ اليوم

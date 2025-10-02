@@ -1,8 +1,8 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
+import ImageWithFallback from "@/components/image-with-fallback"
 
 interface ContentCardProps {
   title: string
@@ -23,44 +23,38 @@ export default function ContentCard({
   className,
   variant = "default"
 }: ContentCardProps) {
-  // Unified styling constants
-  const cardBaseClasses = "group transition-all duration-300 rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md"
-  const imageClasses = "object-cover transition-transform duration-300"
-  const titleClasses = "font-semibold text-balance transition-colors"
-  const descriptionClasses = "text-sm text-pretty leading-relaxed"
-  const badgeClasses = "bg-primary text-primary-foreground"
-  const linkClasses = "inline-flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-
   if (variant === "minimal") {
     return (
-      <Card className={`${cardBaseClasses} hover:-translate-y-1 border-0 shadow-md ${className}`}>
-        <div className="relative overflow-hidden rounded-lg">
-          <Image
+      <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
+        {/* Image section - always on top */}
+        <div className="relative w-full aspect-video">
+          <ImageWithFallback
             src={image || "/placeholder.svg"}
             alt={title}
-            width={400}
-            height={250}
-            className={`${imageClasses} w-full h-40 group-hover:scale-105`}
+            fill
+            className="object-cover"
           />
           {badge && (
-            <Badge className={`${badgeClasses} absolute top-3 left-3 text-xs`}>
+            <Badge className="absolute top-2 left-2 text-xs px-2 py-1">
               {badge}
             </Badge>
           )}
         </div>
+        
+        {/* Content section - always below image */}
         <CardContent className="p-4">
-          <CardTitle className={`${titleClasses} text-lg group-hover:text-primary mb-2`}>
+          <CardTitle className="text-lg font-semibold mb-2">
             {title}
           </CardTitle>
-          <CardDescription className={`${descriptionClasses} line-clamp-2`}>
+          <CardDescription className="text-sm line-clamp-2 mb-3">
             {description}
           </CardDescription>
           <Link
             href={href}
-            className={`${linkClasses} mt-3`}
+            className="text-primary text-sm font-medium hover:underline flex items-center"
           >
             تعرف على المزيد
-            <ArrowRight className="mr-1 h-4 w-4 group-hover:translate-x-1" />
+            <ArrowRight className="mr-1 h-3 w-3" />
           </Link>
         </CardContent>
       </Card>
@@ -69,26 +63,30 @@ export default function ContentCard({
 
   if (variant === "overlay") {
     return (
-      <Card className={`${cardBaseClasses} relative rounded-xl shadow-lg ${className}`}>
-        <div className="relative h-64">
-          <Image
+      <Card className={`relative overflow-hidden rounded-xl ${className}`}>
+        {/* Image section - always on top */}
+        <div className="relative w-full aspect-video">
+          <ImageWithFallback
             src={image || "/placeholder.svg"}
             alt={title}
             fill
-            className={`${imageClasses} group-hover:scale-105`}
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-background/20" />
-          <div className="absolute bottom-0 left-0 right-0 p-5">
-            <CardTitle className={`${titleClasses} text-xl text-foreground mb-2`}>
-              {title}
-            </CardTitle>
-            {badge && (
-              <Badge className={badgeClasses}>
-                {badge}
-              </Badge>
-            )}
-          </div>
         </div>
+        
+        {/* Content section - overlaid on image */}
+        <div className="absolute bottom-0 left-0 right-0 bg-background p-4">
+          <CardTitle className="text-xl font-semibold mb-2">
+            {title}
+          </CardTitle>
+          {badge && (
+            <Badge className="text-sm px-2 py-1">
+              {badge}
+            </Badge>
+          )}
+        </div>
+        
+        {/* Invisible link overlay */}
         <Link
           href={href}
           className="absolute inset-0"
@@ -100,30 +98,39 @@ export default function ContentCard({
 
   // Default variant
   return (
-    <Card className={`${cardBaseClasses} hover:shadow-lg hover:-translate-y-1 ${className}`}>
-      <div className="relative overflow-hidden rounded-t-lg">
-        <Image
+    <Card className={`overflow-hidden border border-border rounded-xl ${className}`}>
+      {/* Image section - always on top */}
+      <div className="relative w-full aspect-video">
+        <ImageWithFallback
           src={image || "/placeholder.svg"}
           alt={title}
-          width={400}
-          height={250}
-          className={`${imageClasses} w-full h-48 group-hover:scale-105`}
+          fill
+          className="object-cover"
         />
-        {badge && <Badge className={`${badgeClasses} absolute top-3 left-3`}>{badge}</Badge>}
+        {badge && (
+          <Badge className="absolute top-2 left-2 text-sm px-2 py-1">
+            {badge}
+          </Badge>
+        )}
       </div>
-      <CardHeader>
-        <CardTitle className={`${titleClasses} text-lg group-hover:text-primary`}>
+      
+      {/* Content section - always below image */}
+      <CardHeader className="pb-3 px-4 pt-4">
+        <CardTitle className="text-lg font-semibold">
           {title}
         </CardTitle>
-        <CardDescription className={descriptionClasses}>{description}</CardDescription>
+        <CardDescription className="text-sm line-clamp-2 mt-1">
+          {description}
+        </CardDescription>
       </CardHeader>
-      <CardContent>
+      
+      <CardContent className="pt-0 px-4 pb-4">
         <Link
           href={href}
-          className={linkClasses}
+          className="text-primary text-sm font-medium hover:underline flex items-center"
         >
           تعرف على المزيد
-          <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1" />
+          <ArrowRight className="ml-1 h-3 w-3" />
         </Link>
       </CardContent>
     </Card>

@@ -21,8 +21,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 transition-transform hover:scale-105 duration-200">
-              <span className="text-xl font-semibold">الموقع الاحترافي</span>
+            <Link href="/" className="flex-shrink-0 flex items-center transition-transform hover:scale-105 duration-200">
+              <img 
+                src="/logo.png" 
+                alt="Logo" 
+                className="h-10 w-auto mx-3"
+              />
+              <span className="text-xl font-semibold text-foreground">قمر الخليج الذهبي</span>
             </Link>
           </div>
 
@@ -32,14 +37,12 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-muted-foreground hover:border-border hover:text-foreground transition-colors"
+                className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-muted-foreground hover:border-primary hover:text-foreground transition-colors"
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="rounded-md bg-primary px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-hover">
-              تسجيل الدخول
-            </Button>
+  
           </div>
 
           {/* Mobile menu button */}
@@ -48,7 +51,7 @@ export default function Navbar() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:bg-secondary hover:text-foreground"
+              className="text-foreground hover:bg-accent hover:text-accent-foreground"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -63,15 +66,13 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-sm font-medium rounded-md hover:bg-secondary hover:text-foreground transition-colors"
+                  className="block px-3 py-2 text-sm font-medium rounded-md text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="mt-4 px-3">
-                <Button className="w-full">تسجيل الدخول</Button>
-              </div>
+         
             </div>
           </div>
         )}
