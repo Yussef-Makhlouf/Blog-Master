@@ -63,7 +63,7 @@ export default async function BlogPage() {
 
         <section className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <GridLayout columns={2} gap="lg">
+            <GridLayout columns={1} gap="lg">
               {blogTopics.map((topic, index) => (
                 <ContentCard
                   key={topic.id}

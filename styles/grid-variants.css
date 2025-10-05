@@ -1,39 +1,97 @@
-/* Custom Grid Variants for Enhanced Card Layouts */
+/* Enhanced Grid Variants for Professional Card Layouts */
 
-/* Staggered Grid - Creates a brick-like pattern */
+/* Default Grid - Equal height cards with smooth animations */
+.enhanced-grid {
+  display: grid;
+  align-items: stretch;
+}
+
+.enhanced-grid > * {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.enhanced-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.enhanced-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.enhanced-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.enhanced-grid > *:nth-child(4) { animation-delay: 0.4s; }
+.enhanced-grid > *:nth-child(5) { animation-delay: 0.5s; }
+.enhanced-grid > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Staggered Grid - Creates a brick-like pattern with better spacing */
 .grid-staggered {
   grid-auto-flow: row dense;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
   .grid-staggered > :nth-child(3n+2) {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+  }
+  .grid-staggered > :nth-child(4n+3) {
+    margin-top: 0.75rem;
   }
 }
 
-/* Mixed Grid - Combines different card sizes */
+/* Mixed Grid - Combines different card sizes with better proportions */
 .grid-mixed {
-  grid-auto-rows: masonry;
+  grid-auto-rows: minmax(300px, auto);
+  align-items: stretch;
 }
 
 @media (min-width: 768px) {
   .grid-mixed > :nth-child(4n+1) {
     grid-column: span 2;
+    grid-row: span 1;
+  }
+  .grid-mixed > :nth-child(6n+5) {
+    grid-column: span 2;
   }
 }
 
-/* Masonry Grid - Flexible height items */
-.grid-rows-masonry {
-  grid-template-rows: masonry;
-  grid-auto-rows: 1px;
-}
-
-/* Alternating Grid - Alternates card styles */
-.grid-alternating {
-  grid-auto-flow: row dense;
-}
-
-/* Featured Grid - Highlights specific items */
+/* Featured Grid - Highlights specific items with better visual hierarchy */
 .grid-featured {
   grid-auto-flow: row dense;
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .grid-featured > :first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* Masonry-like effect using CSS Grid */
+.grid-masonry {
+  grid-template-rows: masonry;
+  align-items: start;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for grid items */
+.enhanced-grid > *:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 640px) {
+  .enhanced-grid {
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .enhanced-grid {
+    gap: 2rem;
+  }
 }

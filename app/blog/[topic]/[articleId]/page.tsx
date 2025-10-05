@@ -271,7 +271,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               centered={false}
             />
 
-            <GridLayout columns={1} sm={2} md={3} gap="md" className="mt-8 md:mt-12">
+            <GridLayout columns={1} gap="md" className="mt-8 md:mt-12">
               {article.relatedArticles?.slice(0, 3).map((relatedArticle: any) => (
                 <ArticleCard
                   key={relatedArticle.id}

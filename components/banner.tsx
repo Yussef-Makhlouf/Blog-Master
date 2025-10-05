@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import ImageWithFallback from "@/components/image-with-fallback"
+import { MessageCircle, Phone } from "lucide-react"
 
 interface BannerProps {
   title: string
@@ -18,6 +19,10 @@ interface BannerProps {
   backgroundType?: "gradient" | "solid" | "image" // New prop for background type
   backgroundColor?: string // New prop for custom background color
   textColor?: string // New prop for custom text color
+  // Contact buttons props
+  showContactButtons?: boolean // New prop to show/hide contact buttons
+  whatsappNumber?: string // WhatsApp number
+  phoneNumber?: string // Phone number
 }
 
 export default function Banner({
@@ -30,6 +35,9 @@ export default function Banner({
   backgroundType = "gradient", // Default to gradient
   backgroundColor = "primary", // Default background color
   textColor = "foreground", // Default text color
+  showContactButtons = false, // Default to false
+  whatsappNumber = "+966592425757", // Default WhatsApp number
+  phoneNumber = "+966592425757", // Default phone number
 }: BannerProps) {
   const baseClasses = "relative overflow-hidden rounded-xl border border-border shadow-sm"
   const variantClasses = {
@@ -45,10 +53,21 @@ export default function Banner({
     secondary: "bg-gradient-to-l from-secondary/10 to-accent/10 border-secondary/20",
     accent: "bg-gradient-to-l from-accent/10 to-primary/10 border-accent/20",
     muted: "bg-gradient-to-l from-muted/20 to-muted/10 border-muted/30",
+    card: "bg-card border-border",
     blue: "bg-gradient-to-l from-blue-500/10 to-indigo-500/10 border-blue-500/20",
     green: "bg-gradient-to-l from-green-500/10 to-emerald-500/10 border-green-500/20",
     purple: "bg-gradient-to-l from-purple-500/10 to-pink-500/10 border-purple-500/20",
     orange: "bg-gradient-to-l from-orange-500/10 to-amber-500/10 border-orange-500/20",
+    "#da5f0a": "border-orange-600/30",
+    "#187e89": "border-teal-600/30",
+  }
+
+  // Function to get background style for custom colors
+  const getBackgroundStyle = () => {
+    if (backgroundColor.startsWith('#')) {
+      return { backgroundColor }
+    }
+    return {}
   }
 
   // Text color classes mapping
@@ -68,9 +87,10 @@ export default function Banner({
         className={cn(
           baseClasses, 
           backgroundType === "gradient" ? bgColorClasses[backgroundColor] || bgColorClasses.primary : 
-          backgroundType === "solid" ? `bg-${backgroundColor}` : "",
+          backgroundType === "solid" ? (backgroundColor.startsWith('#') ? bgColorClasses[backgroundColor] || "" : `bg-${backgroundColor}`) : "",
           className
         )}
+        style={backgroundType === "solid" && backgroundColor.startsWith('#') ? getBackgroundStyle() : {}}
       >
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center">
           {image && (
@@ -101,6 +121,22 @@ export default function Banner({
                   </Link>
                 </Button>
               )}
+              {showContactButtons && (
+                <>
+                  <Button asChild size="default" variant="default" className="bg-green-600 hover:bg-green-700 text-white">
+                    <Link href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="ml-2 h-4 w-4" />
+                      واتساب
+                    </Link>
+                  </Button>
+                  <Button asChild size="default" variant="outline">
+                    <Link href={`tel:${phoneNumber}`}>
+                      <Phone className="ml-2 h-4 w-4" />
+                      اتصال
+                    </Link>
+                  </Button>
+                </>
+              )}
               <Button asChild size="default" variant="outline">
                 <Link href="/encyclopedia">
                   معرفة المزيد
@@ -121,9 +157,10 @@ export default function Banner({
           "border-x-0 border-t-0 rounded-none",
           backgroundType === "image" && image ? "" : 
           backgroundType === "gradient" ? bgColorClasses[backgroundColor] || bgColorClasses.primary : 
-          backgroundType === "solid" ? `bg-${backgroundColor}` : "",
+          backgroundType === "solid" ? (backgroundColor.startsWith('#') ? bgColorClasses[backgroundColor] || "" : `bg-${backgroundColor}`) : "",
           className
         )}
+        style={backgroundType === "solid" && backgroundColor.startsWith('#') ? getBackgroundStyle() : {}}
       >
         <div className="relative">
           {backgroundType === "image" && image && (
@@ -147,13 +184,31 @@ export default function Banner({
               <p className={cn("text-base sm:text-lg text-pretty mb-5 sm:mb-6 max-w-2xl", textColorClasses[textColor])}>
                 {description}
               </p>
-              {cta && (
-                <Button asChild size="lg" variant={cta.variant || "default"}>
-                  <Link href={cta.href}>
-                    {cta.text}
-                  </Link>
-                </Button>
-              )}
+              <div className="flex flex-wrap gap-3">
+                {cta && (
+                  <Button asChild size="lg" variant={cta.variant || "default"}>
+                    <Link href={cta.href}>
+                      {cta.text}
+                    </Link>
+                  </Button>
+                )}
+                {showContactButtons && (
+                  <>
+                    <Button asChild size="lg" variant="default" className="bg-green-600 hover:bg-green-700 text-white">
+                      <Link href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">
+                        <MessageCircle className="ml-2 h-5 w-5" />
+                        واتساب
+                      </Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline">
+                      <Link href={`tel:${phoneNumber}`}>
+                        <Phone className="ml-2 h-5 w-5" />
+                        اتصال
+                      </Link>
+                    </Button>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -167,9 +222,10 @@ export default function Banner({
         baseClasses, 
         variantClasses[variant],
         backgroundType === "gradient" ? bgColorClasses[backgroundColor] || bgColorClasses.primary : 
-        backgroundType === "solid" ? `bg-${backgroundColor}` : "",
+        backgroundType === "solid" ? (backgroundColor.startsWith('#') ? bgColorClasses[backgroundColor] || "" : `bg-${backgroundColor}`) : "",
         className
       )}
+      style={backgroundType === "solid" && backgroundColor.startsWith('#') ? getBackgroundStyle() : {}}
     >
       <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center">
         {image && (
@@ -189,13 +245,31 @@ export default function Banner({
           <p className={cn("text-sm sm:text-base text-pretty mb-4 sm:mb-5", textColorClasses[textColor])}>
             {description}
           </p>
-          {cta && (
-            <Button asChild size={variant === "compact" ? "sm" : "default"} variant={cta.variant || "default"}>
-              <Link href={cta.href}>
-                {cta.text}
-              </Link>
-            </Button>
-          )}
+          <div className="flex flex-wrap gap-3">
+            {cta && (
+              <Button asChild size={variant === "compact" ? "sm" : "default"} variant={cta.variant || "default"}>
+                <Link href={cta.href}>
+                  {cta.text}
+                </Link>
+              </Button>
+            )}
+            {showContactButtons && (
+              <>
+                <Button asChild size={variant === "compact" ? "sm" : "default"} variant="default" className="bg-green-600 hover:bg-green-700 text-white">
+                  <Link href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="ml-2 h-4 w-4" />
+                    واتساب
+                  </Link>
+                </Button>
+                <Button asChild size={variant === "compact" ? "sm" : "default"} variant="outline">
+                  <Link href={`tel:${phoneNumber}`}>
+                    <Phone className="ml-2 h-4 w-4" />
+                    اتصال
+                  </Link>
+                </Button>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

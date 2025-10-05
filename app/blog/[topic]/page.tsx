@@ -62,7 +62,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {articles.length > 0 ? (
-              <GridLayout columns={2} gap="lg">
+              <GridLayout columns={1} gap="lg">
                 {articles.map((article: any) => (
                   <ArticleCard
                     key={article.id}
